@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32599e2de5ec9bc4ca543c26127f9180, type: 3}
   m_Name: Default
   m_EditorClassIdentifier: 
-  health: 3
+  health: 42
   ability: 0
   points: 0
   shipName: Default
