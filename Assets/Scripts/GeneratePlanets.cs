@@ -18,7 +18,7 @@ public class GeneratePlanets : MonoBehaviour {
 		initTimer -= 1 * Time.deltaTime;
 		if(initTimer < 0)
 		{
-			Debug.Log("SPAWNING");
+			
 			float rand = Random.Range(-5.5f,5.5f);
 			Vector3 randPos = new Vector3(rand,7,0);
 			

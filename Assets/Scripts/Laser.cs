@@ -9,7 +9,7 @@ public class Laser : MonoBehaviour {
     #region Unity Methods
 
     void Start () {
-        
+
     }
     
     void Update () {
@@ -18,10 +18,9 @@ public class Laser : MonoBehaviour {
 
 	void OnTriggerEnter(Collider obj)
 	{
-		Debug.Log("Laser1");
+		
 		if (obj.tag == "planet")
 		{
-			Debug.Log("Laser");
 			Destroy(gameObject);
 		}
 	}
