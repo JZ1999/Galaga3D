@@ -428,13 +428,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1875910642404628}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20911f78651ef54428895454d47f9025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   initTimer: 5
-  planet: {fileID: 1685876027268896, guid: 33aa8dd15c79206489177ec6d0936c0f, type: 2}
+  planet: {fileID: 1679520849384690, guid: eca9a6cbb0701ab498d3752d272f735e, type: 2}
 --- !u!136 &136163781228480006
 CapsuleCollider:
   m_ObjectHideFlags: 1
