@@ -13,6 +13,12 @@ public class Movement : MonoBehaviour {
     
     void Update () {
 		int movement = applyRotation(getMovement());
+		if(transform.position.x > 4.5 || transform.position.x < -4.5)
+		{
+			Vector3 dir = transform.position.x > 4.5 ? Vector3.left : Vector3.right;
+			rb.AddForce(dir);
+			rb.velocity = Vector3.zero;
+		}
 		if (movement!=0)
 		{
 			float new_x = speed * Time.deltaTime * movement;
