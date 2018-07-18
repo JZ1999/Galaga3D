@@ -7,16 +7,17 @@ public class actvarCamaras : MonoBehaviour {
 	private GameObject[] camaras;
 	[SerializeField]
 	private float Timer;
-	private float Timer_cp;
 	bool x = true;
 	#endregion
 
 	#region Unity Methods
-
-	void Start () {
-		Timer_cp = Timer;
-	}
     
+	void Start()
+	{
+		camaras[0].GetComponent<Camera>().enabled = true;
+		camaras[1].GetComponent<Camera>().enabled = false;
+	}
+
     void Update () {
 		Timer -= Time.deltaTime;
 		if (Timer < 0 && x)
