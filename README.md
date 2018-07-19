@@ -22,7 +22,7 @@ git clone http://github.com/JZ1999/Galaga3D.git
 ```
 **[Descarga de Juego]()**
 
-## Estandard de Versiones
+## Estandar de Versiones
 
 * **_Versión de Unity_**: 2018.1.8
 ***
@@ -39,6 +39,68 @@ git clone http://github.com/JZ1999/Galaga3D.git
 
 * **_Paquete_**: Su código permanece igual, cambios en la biblioteca externa o actualización de archivos de activos.
 ***
+
+## Estándares de codigo y workflow de programación
+
+Muchos de los estándares vienen del libro **Clean Code: A Handbook of Agile Software Craftsmanship: Robert C**.
+
+> 1. Utilizar el #region para funciones de Unity y para las Variables
+
+> 2. Utilizar barra baja para variables que no sean de las clases de Unity ejemplo: private int __var;
+
+> 3. Evitar clases mas grandes que 100 lineas
+
+> 4. Evitar lineas mas de 81 columnas
+
+> 5. Evitar funciones con mas de 6 lineas
+
+> 6. Usar nombres de funciones descriptivos, que hagan exclusivamente lo que dicen
+
+> 7. Escribir nombre de variables descriptivos
+
+> 8. Escribir nombre de clases descriptivos
+
+> 9. **Nunca** dejar codigo comentado al hacer un git commit
+
+> 10. Hacer git commits frecuentes con mensajes semi detallados ejemplo: "Actualizar ataque de nave basica y editar el README"
+
+> 11. Evitar cantidad excesiva de comentarios, el codigo debe hablar por si mismo
+
+> 12. Todo codigo debe ser en español
+
+> 13. Evitar hacer un git commit con bugs del codigo que editaste, o que buguee el codigo de alguien mas
+
+> 14. Por modularización, no hacer variables publicos (Hay excepciones), utilize el decorador [Serializable] en vez
+
+> 15. Poner el codigo en sus carpetas respectivas (Scripts de objetos, de manejo y de informacion). Los de objetos son los que tienen una relacion directa con objetos.
+>Los de manejo son los que controlan la escena como los objetos Managers. De ultimo, los de información guardan cosas como la información de las naves para poder tener acceso
+>a esa información estatica.
+
+> 16. Todas las clases que sean pronombres y que la primer letra sea mayúscula
+
+> 17. Las funciones deben ser verbos y ser camel-case con la primer letra minúscula
+
+> 18. Evitar el uso del try catch y no devolver codigos de errores. Devuelva un objeto descriptivo del error.
+
+> 19. Usar formato CRLF
+
+> 20. los if, switch, for, while y funciones deben estar formateados con sus corchetes de tal manera:
+>```c#
+>if(booleano)
+>{
+> var++;
+>}
+>```
+
+> 21. Hacer git pull lo mas posible
+
+> 22. Utilizar el siguiente codigo para un indicador de "sin terminar" o cosas que hacer en ese script:
+>```c#
+>//TODO:
+>//Cosa que hacer
+>```
+
+> 23. Para los objetos AudioSource al final del variable poner SND, para los de texto poner TXT y los transform poner TR.
 ## Controles
 
 * Movimiento: A izquierda, D derecha

@@ -4,8 +4,8 @@ public class PlanetMovement : MonoBehaviour {
 
 	#region Variables
 	private GameObject obj;
-	public float speedMov;
-	public float speedRot;
+	public float _velocidadMovimiento;
+	public float _velocidadRotacion;
 	#endregion
 
 	#region Unity Methods
@@ -16,8 +16,8 @@ public class PlanetMovement : MonoBehaviour {
 
 	void Update()
 	{
-		obj.transform.Rotate(new Vector3(0, speedRot * Time.deltaTime,0));
-		obj.transform.Translate(new Vector3(0, -speedMov * Time.deltaTime));
+		obj.transform.Rotate(new Vector3(0, _velocidadRotacion * Time.deltaTime,0));
+		obj.transform.Translate(new Vector3(0, -_velocidadMovimiento * Time.deltaTime));
 	}
 
 	#endregion

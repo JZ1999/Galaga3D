@@ -4,20 +4,20 @@ public class despawnFractured : MonoBehaviour {
 
     #region Variables
 	[SerializeField]
-	private float despawnTime;
+	private float __tiempoDespawn;
 	[SerializeField]
-	private AudioSource crackling;
+	private AudioSource explosionSND;
 	#endregion
 
 	#region Unity Methods
 
 	void Start () {
-		crackling.Play();
+		explosionSND.Play();
     }
     
     void Update () {
-		despawnTime -= Time.deltaTime;
-        if(despawnTime < 0)
+		__tiempoDespawn -= Time.deltaTime;
+        if(__tiempoDespawn < 0)
 		{
 			Destroy(gameObject);
 		}

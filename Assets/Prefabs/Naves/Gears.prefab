@@ -391,8 +391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb56277883215448a1e5471b15cacb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 11400000, guid: 0b6d3c834024e8345a291a2332ec00e0, type: 2}
-  life: {fileID: 0}
+  naveInfo: {fileID: 11400000, guid: 0b6d3c834024e8345a291a2332ec00e0, type: 2}
+  vidaTXT: {fileID: 0}
 --- !u!114 &114064205181897268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -405,9 +405,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 54509424784963952}
-  speed: 41.25
-  rotation: 1
-  tr: {fileID: 4023739504531806}
+  _velocidad: 7
+  _rotacion: 1.5
 --- !u!114 &114818256546357736
 MonoBehaviour:
   m_ObjectHideFlags: 1

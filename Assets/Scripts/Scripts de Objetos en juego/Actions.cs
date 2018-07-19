@@ -3,58 +3,99 @@
 public class Actions : MonoBehaviour {
 
 	#region Variables
-	public GameObject laser;
-	public PlayerInfo MARKI;
-	private float cooldown;
-	private float abilityCooldown;
-	private float abilityDuration;
+	[SerializeField]
+	private GameObject laser;
+	[SerializeField]
+	private PlayerInfo MARKI;
+	private float __cooldownDeDisparo;
+	private float __cooldownDeHabilidad;
+	private float __duracionHabilidad;
 	private AudioSource laserSND;
-	private float cooldown_cp;
-	private float abilityCooldown_cp;
-	private bool laserVault;
-	private float abilityDuration_cp;
+	private float __cooldownDeDisparo_cp;
+	private float __cooldownDeAbilidad_cp;
+	private bool __laserVault; //Dice si abilidad está activada
+	private float __duracionHabilidad_cp;
 	#endregion
 
 	#region Unity Methods
 
 	void Start () {
-		cooldown = MARKI.cooldown;
-		abilityCooldown = MARKI.abilityCooldown;
-		abilityDuration = MARKI.abilityDuration;
+		__cooldownDeDisparo = MARKI.cooldown;
+		__cooldownDeHabilidad = MARKI.abilityCooldown;
+		__duracionHabilidad = MARKI.abilityDuration;
 		laserSND = gameObject.GetComponent<AudioSource>();
-		cooldown_cp = MARKI.cooldown;
-		abilityCooldown_cp = MARKI.abilityCooldown;
-		abilityDuration_cp = MARKI.abilityDuration;
-
+		__cooldownDeDisparo_cp = MARKI.cooldown;
+		__cooldownDeAbilidad_cp = MARKI.abilityCooldown;
+		__duracionHabilidad_cp = MARKI.abilityDuration;
 	}
     
     void Update () {
-		cooldown = laserVault ? cooldown/2 : cooldown;
-		cooldown -= Time.deltaTime;
-		
-		abilityDuration -= Time.deltaTime;
-
-		if(abilityDuration < 0)
+		calcularCooldowns();
+		if (usarHabilidad() && !cooldownActivoHabilidad())
 		{
-			abilityCooldown -= Time.deltaTime;
-			laserVault = false;
+			activarHabilidad();
 		}
-
-
-		if (Input.GetKeyDown(KeyCode.Space) && cooldown < 0)
+		if (disparar() && !cooldownActivoDisparar())
 		{
-			Instantiate(laser, transform.position, Quaternion.identity);
-			cooldown = cooldown_cp;
-			laserSND.Play();
-		}
-
-		if(Input.GetKeyDown(KeyCode.Q) && abilityCooldown < 0)
-		{
-			abilityDuration = abilityDuration_cp;
-			laserVault = true;
-			abilityCooldown = abilityCooldown_cp;
+			crearLaser();
 		}
     }
+	#endregion
 
-    #endregion
+	void activarHabilidad()
+	{
+		__duracionHabilidad = __duracionHabilidad_cp;
+		__laserVault = true;
+		__cooldownDeHabilidad = __cooldownDeAbilidad_cp;
+	}
+
+	void crearLaser()
+	{
+		//Ademas de crearlo activa el cooldown de disparar
+		Instantiate(laser, transform.position, Quaternion.identity);
+		__cooldownDeDisparo = __cooldownDeDisparo_cp;
+		laserSND.Play();
+	}
+
+	bool disparar()
+	{
+		return Input.GetKeyDown(KeyCode.Space);
+	}
+
+	void calcularCooldowns()
+	{
+		__cooldownDeDisparo = calcularCooldownDisparo();
+		__cooldownDeDisparo -= Time.deltaTime;
+		__duracionHabilidad -= Time.deltaTime;
+		if (habilidadTermino())
+		{
+			__cooldownDeHabilidad -= Time.deltaTime;
+			__laserVault = false;
+		}
+	}
+
+	float calcularCooldownDisparo()
+	{
+		return __laserVault ? __cooldownDeDisparo / 2 : __cooldownDeDisparo;
+	}
+
+	bool cooldownActivoHabilidad()
+	{
+		return __cooldownDeHabilidad > 0;
+	}
+
+	bool cooldownActivoDisparar()
+	{
+		return __cooldownDeDisparo > 0;
+	}
+
+	bool habilidadTermino()
+	{
+		return __duracionHabilidad < 0;
+	}
+
+	bool usarHabilidad()
+	{
+		return Input.GetKeyDown(KeyCode.Q);
+	}
 }

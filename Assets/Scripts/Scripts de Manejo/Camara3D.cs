@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 
+//TODO:
+//Mover de camara 2D a 3D mediante una animación
 public class Camara3D : MonoBehaviour {
 
 	#region Variables
 	
-	private Transform jugador;
+	private Transform jugadorTR;
 	[SerializeField]
-	private float velocidadCamara = 0.25f;
+	private float _velocidadCamara = 0.25f;
 	[SerializeField]
 	private Vector3 offset;
 	#endregion
@@ -14,14 +16,23 @@ public class Camara3D : MonoBehaviour {
 	#region Unity Methods
 
 	void Start () {
-		jugador = GameObject.FindGameObjectWithTag("Player").transform;
-		//transform.position = camara2D.transform.position;
-    }
-    
-    void FixedUpdate () {
-		Vector3 posicionDeseada = jugador.position + offset;
-		Vector3 posicionDeseadaMejorada = Vector3.Lerp(transform.position, posicionDeseada, velocidadCamara);
-		transform.position = posicionDeseadaMejorada;
+		//jugadorTR = GameObject.FindGameObjectWithTag("Player").transform;
+	}
+
+	private void LateUpdate()
+	{
+		jugadorTR = GameObject.FindGameObjectWithTag("Player").transform;
+	}
+
+	void FixedUpdate () {
+		//Este codigo hace un efecto natural de la camara
+		//Siguiendo al jugador
+		if (jugadorTR != null)
+		{
+			Vector3 posicionDeseada = jugadorTR.position + offset;
+			Vector3 posicionDeseadaMejorada = Vector3.Lerp(transform.position, posicionDeseada, _velocidadCamara);
+			transform.position = posicionDeseadaMejorada;
+		}
     }
 
     #endregion

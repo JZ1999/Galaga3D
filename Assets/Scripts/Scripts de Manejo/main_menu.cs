@@ -9,22 +9,14 @@ public class main_menu : MonoBehaviour {
 
     #region Unity Methods
 
-    void Start () {
-        
-    }
-    
-    void Update () {
-        
-    }
-
     #endregion
 
-	public void PlayGame()
+	public void Jugar()
 	{
 		SceneManager.LoadScene(1);
 	}
 
-	public void QuitGame()
+	public void Salirse()
 	{
 		Debug.Log("EXIT");
 		Application.Quit();

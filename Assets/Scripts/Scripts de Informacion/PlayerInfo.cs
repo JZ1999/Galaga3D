@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewShip", menuName ="Ship")]
+[CreateAssetMenu(fileName = "NuevaNave", menuName ="Nave")]
 public class PlayerInfo : ScriptableObject {
 	/*
 		Contiene información sobre las naves disponibles

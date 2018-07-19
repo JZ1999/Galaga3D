@@ -4,18 +4,18 @@ using UnityEngine.SceneManagement;
 public class seleccionar : MonoBehaviour {
 
 	#region Variables
-	private int indice;
+	private int _indice;//Controla cual nave está seleccionada
 	private GameObject naveDeMuestra;
 	private GameObject nave;
 	private GameObject contenedorDeMuestra;
-	private string[] naves;
+	private string[] _naves;//Contiene todas las naves disponibles del juego
 	#endregion
 
 	#region Unity Methods
 
 	void Start() {
-		naves = new string[] {"modelo0","modelo1"};
-		indice = 0;
+		_naves = new string[] {"modelo0","modelo1"};
+		_indice = 0;
 
 	}
 
@@ -25,12 +25,12 @@ public class seleccionar : MonoBehaviour {
 	public void Siguiente(GameObject contenedor)
 	{
 		
-		if (indice < 1)
+		if (_indice < 1)
 		{
-			indice++;
-			Destroy(GameObject.FindGameObjectWithTag(naves[indice-1]));
-			Instantiate(contenedor.GetComponent<modelos>().naves[indice], contenedor.transform);
-			nave = Informacion.navesObject[indice];
+			_indice++;
+			Destroy(GameObject.FindGameObjectWithTag(_naves[_indice - 1]));
+			Instantiate(contenedor.GetComponent<modelos>().naves[_indice], contenedor.transform);
+			nave = Informacion.navesObject[_indice];
 			
 		}
 	}
@@ -38,18 +38,18 @@ public class seleccionar : MonoBehaviour {
 	public void Anterior(GameObject contenedor)
 	{
 		
-		if (indice > 0)
+		if (_indice > 0)
 		{
-			indice--;
-			Destroy(GameObject.FindGameObjectWithTag(naves[indice + 1]));
-			Instantiate(contenedor.GetComponent<modelos>().naves[indice], contenedor.transform);
-			nave = Informacion.navesObject[indice];
+			_indice--;
+			Destroy(GameObject.FindGameObjectWithTag(_naves[_indice + 1]));
+			Instantiate(contenedor.GetComponent<modelos>().naves[_indice], contenedor.transform);
+			nave = Informacion.navesObject[_indice];
 		}
 	}
 
 	public void Seleccion()
 	{
-		Informacion.J1 = indice;
+		Informacion.J1 = _indice;
 		SceneManager.LoadScene(2);
 	}
 

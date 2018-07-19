@@ -4,11 +4,15 @@ public class Fracture : MonoBehaviour {
 
 	#region Variables
 	[SerializeField]
-	private GameObject fractured;
+	private GameObject fracturado;//La version del objeto fraturada
 	[SerializeField]
 	private int health;
 	[SerializeField]
-	private AudioSource laserCrash;
+	private AudioSource laserCrash;//Se debe sonar el sonido del choque
+									//con este script del planet en vez
+									//del laser debido a que el laser se
+									//destruye y no le da tiempo al AudioSource
+									//de sonar
 	#endregion
 
 	#region Unity Methods
@@ -16,23 +20,26 @@ public class Fracture : MonoBehaviour {
 
 	void OnTriggerEnter(Collider obj)
 	{
-		
 		if(obj.tag == "laser")
 		{
-			laserCrash.Play();
-			health--;
-			if(health <= 0)
-			{
-				fracturePlanet();
-			}
+			colisionConLaser();
 		}
 	}
 
-	void fracturePlanet()
+	#endregion
+	void fracturarPlaneta()
 	{
-		Instantiate(fractured, transform.position, transform.rotation);
+		Instantiate(fracturado, transform.position, transform.rotation);
 		Destroy(gameObject);
 	}
 
-	#endregion
+	void colisionConLaser()
+	{
+		laserCrash.Play();
+		health--;
+		if (health <= 0)
+		{
+			fracturarPlaneta();
+		}
+	}
 }

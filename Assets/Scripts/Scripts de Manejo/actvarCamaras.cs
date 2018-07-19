@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 
+//TODO: 
 public class actvarCamaras : MonoBehaviour {
 
 	#region Variables
 	[SerializeField]
 	private GameObject[] camaras;
 	[SerializeField]
-	private float Timer;
-	bool x = true;
+	private float _tiempo;
+	bool _x = true;//Variable temporal
 	#endregion
 
 	#region Unity Methods
@@ -19,16 +20,20 @@ public class actvarCamaras : MonoBehaviour {
 	}
 
     void Update () {
-		Timer -= Time.deltaTime;
-		if (Timer < 0 && x)
+		_tiempo -= Time.deltaTime;
+		if (_tiempo < 0 && _x)
 		{
-			x = false;
-			Debug.Log("Cam");
-			camaras[1].GetComponent<Camera>().enabled = true;
-			camaras[0].GetComponent<Camera>().enabled = false;
-			
+			activarOtraCamara();
 		}
 	}
 
     #endregion
+
+	void activarOtraCamara()
+	{
+
+		_x = false;
+		camaras[1].GetComponent<Camera>().enabled = true;
+		camaras[0].GetComponent<Camera>().enabled = false;
+	}
 }

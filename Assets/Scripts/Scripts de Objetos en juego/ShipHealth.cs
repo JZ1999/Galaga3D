@@ -4,48 +4,59 @@ using UnityEngine.UI;
 public class ShipHealth : MonoBehaviour {
 
 	#region Variables
-	public PlayerInfo ship;
+	[SerializeField]
+	private PlayerInfo naveInfo;
 	[HideInInspector]
-	public Text life;
-	private int health;
-	private float[] colors;
-	private float percentRed;//Percent needed to subtract from text red everytime it receives dmg
+	public Text vidaTXT;
+	private int _vida;
+	private float[] _colores;
+	private float _porcentajeRojo;
     #endregion
 
     #region Unity Methods
 
     void Start () {
-		life = FindObjectOfType<Text>();
-		health = ship.health;
-		life.text = ship.health.ToString();
-		colors = new float[] { life.color.r, life.color.g, life.color.b };
-		percentRed = colors[0] / 20;
+		vidaTXT = FindObjectOfType<Text>();
+		_vida = naveInfo.health;
+		vidaTXT.text = naveInfo.health.ToString();
+		_colores = new float[] { vidaTXT.color.r, vidaTXT.color.g, vidaTXT.color.b };
+		_porcentajeRojo = _colores[0] / 20;
 	}
-    
-    void Update () {
-        
-    }
 
 	void OnTriggerEnter(Collider obj)
 	{
-		if (obj.tag != "laser")
+		if (tocaPlaneta(obj))
 		{
-			Debug.Log("Enter");
-		}
-		if (obj.tag == "planet")
-		{
-			
-			health -= 1;
-			life.text = health.ToString();
-			
-			life.color = new Color(colors[0]-=percentRed, colors[1], colors[2]);
+			bajarVida();
 		}
 
-		if(health == 0)
+		muerto();
+	}
+
+    #endregion
+
+	void muerto()
+	{
+		if (_vida == 0)
 		{
 			Destroy(gameObject);
 		}
 	}
 
-    #endregion
+	bool tocaPlaneta(Collider obj)
+	{
+		return obj.tag == "planet";
+	}
+
+	void bajarVida()
+	{
+		_vida -= 1;
+		cambiarColorDeVida();
+	}
+
+	void cambiarColorDeVida()
+	{
+		vidaTXT.text = _vida.ToString();
+		vidaTXT.color = new Color(_colores[0] -= _porcentajeRojo, _colores[1], _colores[2]);
+	}
 }

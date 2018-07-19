@@ -4,39 +4,33 @@
 public class addGravity : MonoBehaviour {
 
 	#region Variables
-	[SerializeField]
-	[Range(0.1f,2f)]
-	private float mass;
-	int m;
     #endregion
 
     #region Unity Methods
 
     void Start () {
-		mass = 1f;
-		m = 1;
 		gameObject.AddComponent<Rigidbody>();
-		gameObject.GetComponent<Rigidbody>().mass = mass;
     }
 
 	void Update()
 	{
-		int x = (int) Random.Range(0, 4);
-		if (m == 1)
-		{
-			m--;
-			Debug.Log(x);
-		}
-		if (x == 0)
-			gameObject.GetComponent<Rigidbody>().AddForce(Vector3.left * 4);
-		else if(x == 1)
-			gameObject.GetComponent<Rigidbody>().AddForce(Vector3.right * 4);
-		else if (x == 2)
-			gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 3);
-		else
-			gameObject.GetComponent<Rigidbody>().AddForce(Vector3.back * 3);
-
+		int __direccionAleatoriaDeFuerza = Random.Range(0, 4);
+		aplicarFuerza(__direccionAleatoriaDeFuerza);
 	}
 
     #endregion
+
+	void aplicarFuerza(int __direccionAleatoriaDeFuerza)
+	{
+		//Modificar empuje para tener resultado querido
+		if (__direccionAleatoriaDeFuerza == 0)
+			gameObject.GetComponent<Rigidbody>().AddForce(Vector3.left * 4);//Se multiplica por 4 para exagerar el empuje
+		else if (__direccionAleatoriaDeFuerza == 1)
+			gameObject.GetComponent<Rigidbody>().AddForce(Vector3.right * 4);
+		else if (__direccionAleatoriaDeFuerza == 2)
+			gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 3);
+		else if (__direccionAleatoriaDeFuerza == 3)
+			gameObject.GetComponent<Rigidbody>().AddForce(Vector3.back * 3);
+
+	}
 }

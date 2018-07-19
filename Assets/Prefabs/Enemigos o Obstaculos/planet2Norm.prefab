@@ -210,8 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542ae6afe8e91f144a70abbae0253e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMov: 0.5
-  speedRot: 14.83
+  _velocidadMovimiento: 1
+  _velocidadRotacion: 10
 --- !u!114 &114952455223821446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ff1c8e68561fc4ca134c373aea4747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fractured: {fileID: 1271822646035358, guid: 2d1cd821e3ef11246802eecad294fcda, type: 2}
+  fracturado: {fileID: 1271822646035358, guid: 2d1cd821e3ef11246802eecad294fcda, type: 2}
   health: 3
   laserCrash: {fileID: 82733700687065230}
 --- !u!135 &135537690820227908
