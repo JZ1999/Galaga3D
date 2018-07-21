@@ -29,7 +29,7 @@ public class Movement : MonoBehaviour {
 
 	void aplicarMovimiento(int _movement)
 	{
-		float new_x = _velocidad * Time.deltaTime * _movement;
+		float new_x = _velocidad * Time.deltaTime * _movement*5;
 		rb.AddForce(new Vector3(new_x, 0, 0));
 	}
 

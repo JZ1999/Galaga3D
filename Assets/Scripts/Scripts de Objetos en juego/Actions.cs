@@ -35,9 +35,9 @@ public class Actions : MonoBehaviour {
 		{
 			activarHabilidad();
 		}
-		if (disparar() && !cooldownActivoDisparar())
-		{
-			crearLaser();
+        if (disparar() && !cooldownActivoDisparar())
+        {
+            crearLaser();
 		}
     }
 	#endregion

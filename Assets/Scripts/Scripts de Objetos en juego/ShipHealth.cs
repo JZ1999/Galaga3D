@@ -29,8 +29,12 @@ public class ShipHealth : MonoBehaviour {
 		{
 			bajarVida();
 		}
+        if (tocaLaser(obj))
+        {
+            bajarVida();
+        }
 
-		muerto();
+        muerto();
 	}
 
     #endregion
@@ -47,8 +51,12 @@ public class ShipHealth : MonoBehaviour {
 	{
 		return obj.tag == "planet";
 	}
+    bool tocaLaser(Collider obj)
+    {
+        return obj.tag == "enemylaser";
+    }
 
-	void bajarVida()
+    void bajarVida()
 	{
 		_vida -= 1;
 		cambiarColorDeVida();

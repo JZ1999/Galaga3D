@@ -8,6 +8,8 @@ TagManager:
   - laser
   - modelo0
   - modelo1
+  - enemy
+  - enemylaser
   layers:
   - Default
   - TransparentFX

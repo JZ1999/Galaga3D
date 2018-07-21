@@ -71,13 +71,13 @@ GameObject:
   - component: {fileID: 95590759323923982}
   - component: {fileID: 54509424784963952}
   - component: {fileID: 136163781228480006}
-  - component: {fileID: 114064205181897268}
-  - component: {fileID: 114058539491861756}
-  - component: {fileID: 114818256546357736}
+  - component: {fileID: 114652049992055890}
+  - component: {fileID: 114833892839592312}
+  - component: {fileID: 114545041689084448}
   - component: {fileID: 82760425426384126}
   m_Layer: 0
   m_Name: MARK I 1
-  m_TagString: Player
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -380,7 +380,7 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114058539491861756
+--- !u!114 &114545041689084448
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -388,39 +388,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 1875910642404628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cb56277883215448a1e5471b15cacb7, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d95f9a1dcab00c42952576edc31068f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ship: {fileID: 11400000, guid: 7cb6bc3ff45e0a541a6f6f7e7ce696c3, type: 2}
-  life: {fileID: 0}
---- !u!114 &114064205181897268
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1875910642404628}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9cd7f28a442bf643878a365baffba0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 54509424784963952}
-  speed: 41.25
-  rotation: 1
-  tr: {fileID: 4023739504531806}
---- !u!114 &114818256546357736
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1875910642404628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a5c1faa12207547affbc3e50c63185, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  laser: {fileID: 1046723831606960, guid: 6776ae197e1ca224199ecabb6de3aff9, type: 2}
+  enemylaser: {fileID: 1046723831606960, guid: c9afa19a98f06614e9434ab7a3a5e180, type: 2}
   MARKI: {fileID: 11400000, guid: 7cb6bc3ff45e0a541a6f6f7e7ce696c3, type: 2}
+--- !u!114 &114652049992055890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1875910642404628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64eb3a17af8896448228e20f20c63dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  _velocidad: 10
+  _rotacion: 1.1
+--- !u!114 &114833892839592312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1875910642404628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d40a68ba2c619a41a17125afcc084f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  naveInfo: {fileID: 11400000, guid: 7cb6bc3ff45e0a541a6f6f7e7ce696c3, type: 2}
+  vidaTXT: {fileID: 0}
 --- !u!136 &136163781228480006
 CapsuleCollider:
   m_ObjectHideFlags: 1
