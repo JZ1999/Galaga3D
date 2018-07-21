@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
-
+[DisallowMultipleComponent]
 public class EnemyActions : MonoBehaviour
 {
 
     #region Variables
     [SerializeField]
-    private GameObject enemylaser;
+    private GameObject laserEnemigo;
     [SerializeField]
     private PlayerInfo MARKI;
     private float __cooldownDeDisparo;
@@ -23,12 +23,12 @@ public class EnemyActions : MonoBehaviour
     void Start()
     {
         __cooldownDeDisparo = MARKI.cooldown;
-        __cooldownDeHabilidad = MARKI.abilityCooldown;
-        __duracionHabilidad = MARKI.abilityDuration;
+        __cooldownDeHabilidad = MARKI.cooldownHabilidad;
+        __duracionHabilidad = MARKI.duracionHabilidad;
         laserSND = gameObject.GetComponent<AudioSource>();
         __cooldownDeDisparo_cp = MARKI.cooldown;
-        __cooldownDeAbilidad_cp = MARKI.abilityCooldown;
-        __duracionHabilidad_cp = MARKI.abilityDuration;
+        __cooldownDeAbilidad_cp = MARKI.cooldownHabilidad;
+        __duracionHabilidad_cp = MARKI.duracionHabilidad;
     }
 
     void Update()
@@ -51,7 +51,7 @@ public class EnemyActions : MonoBehaviour
     void crearLaser()
     {
         //Ademas de crearlo activa el cooldown de disparar
-        Instantiate(enemylaser, transform.position, Quaternion.identity);
+        Instantiate(laserEnemigo, transform.position, Quaternion.identity);
         __cooldownDeDisparo = __cooldownDeDisparo_cp*3;
         laserSND.Play();
     }

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+[DisallowMultipleComponent]
 public class Control : MonoBehaviour {
 	/*
 		Contiene los jugadores en nivel y los inicializa 

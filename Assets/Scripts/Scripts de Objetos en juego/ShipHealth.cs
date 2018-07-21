@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
+[DisallowMultipleComponent]
 public class ShipHealth : MonoBehaviour {
 
 	#region Variables
@@ -17,8 +17,8 @@ public class ShipHealth : MonoBehaviour {
 
     void Start () {
 		vidaTXT = FindObjectOfType<Text>();
-		_vida = naveInfo.health;
-		vidaTXT.text = naveInfo.health.ToString();
+		_vida = naveInfo.vida;
+		vidaTXT.text = naveInfo.vida.ToString();
 		_colores = new float[] { vidaTXT.color.r, vidaTXT.color.g, vidaTXT.color.b };
 		_porcentajeRojo = _colores[0] / 20;
 	}

@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fracturado: {fileID: 1271822646035358, guid: 2d1cd821e3ef11246802eecad294fcda, type: 2}
-  health: 3
+  vida: 3
   laserCrash: {fileID: 82733700687065230}
 --- !u!135 &135537690820227908
 SphereCollider:

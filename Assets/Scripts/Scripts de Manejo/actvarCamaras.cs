@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
-//TODO: 
+//TODO:
+//-remover variable _x y reemplazarla
+[DisallowMultipleComponent]
 public class actvarCamaras : MonoBehaviour {
 
 	#region Variables

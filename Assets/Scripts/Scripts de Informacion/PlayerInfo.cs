@@ -10,29 +10,31 @@ public class PlayerInfo : ScriptableObject {
 
 	#region Variables
 
-
-	public enum abilities
+	//TODO:
+	//Cambiar este enum y sus valores para que tengan
+	//las habilidades finales del juego
+	public enum habilidades
 	{
-		SPEED, HEALTH, REGEN, SHIELD, ATTACKSPEED, EXPLOSIVES
+		VELOCIDAD, VIDA, REGENERACION, ESCUDO, VELOCIDADDEATAQUE, EXPLOSIVOS
 	};
 
 	[Header("Stats")]
 	[Range(2f, 6f)]
-	public int health;
-	public abilities ability;
+	public int vida;
+	public habilidades habilidad;
 	[Range(0.7f, 3f)]
 	[Tooltip("Cooldown al disparar")]
 	public float cooldown;
-	public float abilityCooldown;
-	public float abilityDuration;
+	public float cooldownHabilidad;
+	public float duracionHabilidad;
 	[Range(1f,6f)]
-	public int damage;
+	public int danno;
 
 	[Space]
 
 	[Header("Misc")]
-	public string shipName;
-	public string description;
+	public string nombreDeNave;
+	public string descripcion;
 
 
 	#endregion

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[DisallowMultipleComponent]
 public class Actions : MonoBehaviour {
 
 	#region Variables
@@ -21,12 +22,12 @@ public class Actions : MonoBehaviour {
 
 	void Start () {
 		__cooldownDeDisparo = MARKI.cooldown;
-		__cooldownDeHabilidad = MARKI.abilityCooldown;
-		__duracionHabilidad = MARKI.abilityDuration;
+		__cooldownDeHabilidad = MARKI.cooldownHabilidad;
+		__duracionHabilidad = MARKI.duracionHabilidad;
 		laserSND = gameObject.GetComponent<AudioSource>();
 		__cooldownDeDisparo_cp = MARKI.cooldown;
-		__cooldownDeAbilidad_cp = MARKI.abilityCooldown;
-		__duracionHabilidad_cp = MARKI.abilityDuration;
+		__cooldownDeAbilidad_cp = MARKI.cooldownHabilidad;
+		__duracionHabilidad_cp = MARKI.duracionHabilidad;
 	}
     
     void Update () {

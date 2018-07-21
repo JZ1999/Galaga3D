@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+[DisallowMultipleComponent]
 public class EnemyMovement : MonoBehaviour
 {
 
@@ -30,10 +30,10 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        int _movement = aplicarRotacion(conseguirMovimiento());
-        if (seEstaMoviendo(_movement))
+        int _movimiento = aplicarRotacion(conseguirMovimiento());
+        if (seEstaMoviendo(_movimiento))
         {
-            aplicarMovimiento(_movement);
+            aplicarMovimiento(_movimiento);
         }
         if (pasoElLimite())
         {
@@ -43,13 +43,13 @@ public class EnemyMovement : MonoBehaviour
 
     #endregion
 
-    void aplicarMovimiento(int _movement)
+    void aplicarMovimiento(int _movimiento)
     {
-        float new_x = _velocidad * Time.deltaTime * _movement * 5;
+        float new_x = _velocidad * Time.deltaTime * _movimiento;
         rb.AddForce(new Vector3(new_x, 0, 0));
     }
 
-    bool seEstaMoviendo(int _movement)
+    bool seEstaMoviendo(int _movimiento)
     {
         return true;
     }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[DisallowMultipleComponent]
 public class despawnFractured : MonoBehaviour {
 
     #region Variables

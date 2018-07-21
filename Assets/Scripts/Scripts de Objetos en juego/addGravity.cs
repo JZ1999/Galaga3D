@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 //Le agrega rigidbody a cada fracturacion del planeta
+[DisallowMultipleComponent]
 public class addGravity : MonoBehaviour {
 
 	#region Variables

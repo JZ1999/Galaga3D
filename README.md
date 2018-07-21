@@ -42,15 +42,16 @@ git clone http://github.com/JZ1999/Galaga3D.git
 
 ## Estándares de codigo y workflow de programación
 
-Muchos de los estándares vienen del libro **Clean Code: A Handbook of Agile Software Craftsmanship: Robert C**.
+Muchos de los estándares vienen del libro [**Clean Code: A Handbook of Agile Software Craftsmanship: Robert C**](https://www.amazon.es/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882).
+[*¡Dale click aquí. Practicas a seguir!*](https://codingwithspike.wordpress.com/2012/09/17/clean-code-cheat-sheet/)
 
-> 1. Utilizar el #region para funciones de Unity y para las Variables
+> 1. Utilizar el preproceso [#region](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/preprocessor-directives/preprocessor-region) para funciones de Unity y para las Variables
 
-> 2. Utilizar barra baja para variables que no sean de las clases de Unity ejemplo: private int var;
+> 2. Utilizar barra baja para variables que no sean de las clases de Unity *Ejemplo*: private int _var;
 
 > 3. Evitar clases mas grandes que 100 lineas
 
-> 4. Evitar lineas mas de 81 columnas
+> 4. Evitar lineas mas de 80 columnas
 
 > 5. Evitar funciones con mas de 6 lineas
 
@@ -62,15 +63,15 @@ Muchos de los estándares vienen del libro **Clean Code: A Handbook of Agile Sof
 
 > 9. **Nunca** dejar codigo comentado al hacer un git commit
 
-> 10. Hacer git commits frecuentes con mensajes semi detallados ejemplo: "Actualizar ataque de nave basica y editar el README"
+> 10. Hacer [git commits](https://git-scm.com/docs/git-commit) frecuentes con mensajes semi detallados ejemplo: "Actualizar ataque de nave basica y editar el README"
 
 > 11. Evitar cantidad excesiva de comentarios, el codigo debe hablar por si mismo
 
-> 12. Todo codigo debe ser en español
+> 12. Todo codigo debe ser en __*español*__ y nombre de archivos
 
 > 13. Evitar hacer un git commit con bugs del codigo que editaste, o que buguee el codigo de alguien mas
 
-> 14. Por modularización, no hacer variables publicos (Hay excepciones), utilize el decorador [Serializable] en vez
+> 14. Por modularización, no hacer variables publicos (Hay excepciones), utilize el decorador [[Serializable]](https://docs.unity3d.com/ScriptReference/Serializable.html) en vez
 
 > 15. Poner el codigo en sus carpetas respectivas (Scripts de objetos, de manejo y de informacion). Los de objetos son los que tienen una relacion directa con objetos.
 >Los de manejo son los que controlan la escena como los objetos Managers. De ultimo, los de información guardan cosas como la información de las naves para poder tener acceso
@@ -82,7 +83,7 @@ Muchos de los estándares vienen del libro **Clean Code: A Handbook of Agile Sof
 
 > 18. Evitar el uso del try catch y no devolver codigos de errores. Devuelva un objeto descriptivo del error.
 
-> 19. Usar formato CRLF
+> 19. Usar formato [CRLF](https://es.wikipedia.org/wiki/CRLF)
 
 > 20. los if, switch, for, while y funciones deben estar formateados con sus corchetes de tal manera:
 >```c#
@@ -92,17 +93,23 @@ Muchos de los estándares vienen del libro **Clean Code: A Handbook of Agile Sof
 >}
 >```
 
-> 21. Hacer git pull lo mas posible
+> 21. Hacer [git pull](https://git-scm.com/docs/git-pull) lo mas posible
 
-> 22. Utilizar el siguiente codigo para un indicador de "sin terminar" o cosas que hacer en ese script:
+> 22. Utilizar el [TODO](http://wordaligned.org/docs/todo/todo/what_does_todo_mean_.html) como en el siguiente codigo para un indicador de "sin terminar" o cosas que hacer en ese script:
 >```c#
 >//TODO:
 >//Cosa que hacer
 >```
 
-> 23. Para los objetos AudioSource al final del variable poner SND, para los de texto poner TXT y los transform poner TR.
+> 23. Para los objetos [AudioSource](https://docs.unity3d.com/ScriptReference/AudioSource.html) al final del variable poner **SND**, para los de [texto](https://docs.unity3d.com/ScriptReference/UI.Text.html) poner **TXT** y los [transform](https://docs.unity3d.com/ScriptReference/Transform.html) poner **TR**.
 
 > 24. En caso de codigo ambiguo, comentar de forma correcta.
+
+> 25. Mantener encima de cada script (Al menos de que sea excepción), el atributo [[DisallowMultipleComponent]](https://docs.unity3d.com/ScriptReference/DisallowMultipleComponent.html) para no poner mas que uno del mismo script.
+
+> 26. Utilizar Atributos de Unity en todo momento que se pueda aplicar como el [[Tooltip()]](https://docs.unity3d.com/ScriptReference/TooltipAttribute.html), [[Space]](https://docs.unity3d.com/ScriptReference/SpaceAttribute.html), [[Range()]](https://docs.unity3d.com/ScriptReference/SocialPlatforms.Range.html), etc.
+
+> 27. No usar ningún caracter que no sea de [ASCII](https://www.asciitable.com/). Utilizar doble **n** en vez de **ñ**
 ## Controles
 
 * Movimiento: A izquierda, D derecha
@@ -110,8 +117,8 @@ Muchos de los estándares vienen del libro **Clean Code: A Handbook of Agile Sof
 * Habilidad: Q
 * Pausa: Esc
 
-### Creditos
-***
+## Creditos
+
 #### Ricardo
 [LinkedIn](https://www.linkedin.com/in/joseph-david-zamora-murillo-3645a7148/)
 [Github](https://www.github.com/JZ1999)
@@ -120,11 +127,11 @@ Muchos de los estándares vienen del libro **Clean Code: A Handbook of Agile Sof
 [LinkedIn](https://www.linkedin.com/in/joseph-david-zamora-murillo-3645a7148/)
 [Github](https://www.github.com/JZ1999)
 ***
-### Sharon 
+#### Sharon 
 [LinkedIn](https://www.linkedin.com/in/joseph-david-zamora-murillo-3645a7148/)
-[Github](https://www.github.com/JZ1999)
+
 ***
-### Alejandro
+#### Alejandro
 [LinkedIn](https://www.linkedin.com/in/joseph-david-zamora-murillo-3645a7148/)
 [Github](https://www.github.com/JZ1999)
 ***

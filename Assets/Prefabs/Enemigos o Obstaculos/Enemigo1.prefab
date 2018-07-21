@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 114545041689084448}
   - component: {fileID: 82760425426384126}
   m_Layer: 0
-  m_Name: MARK I 1
+  m_Name: Enemigo1
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -391,7 +391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d95f9a1dcab00c42952576edc31068f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemylaser: {fileID: 1046723831606960, guid: c9afa19a98f06614e9434ab7a3a5e180, type: 2}
+  laserEnemigo: {fileID: 1046723831606960, guid: c9afa19a98f06614e9434ab7a3a5e180,
+    type: 2}
   MARKI: {fileID: 11400000, guid: 7cb6bc3ff45e0a541a6f6f7e7ce696c3, type: 2}
 --- !u!114 &114652049992055890
 MonoBehaviour:
@@ -404,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e64eb3a17af8896448228e20f20c63dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 54509424784963952}
   _velocidad: 10
   _rotacion: 1.1
 --- !u!114 &114833892839592312

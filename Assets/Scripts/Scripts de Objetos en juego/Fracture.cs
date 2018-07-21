@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
-
+[DisallowMultipleComponent]
 public class Fracture : MonoBehaviour {
 
 	#region Variables
 	[SerializeField]
 	private GameObject fracturado;//La version del objeto fraturada
 	[SerializeField]
-	private int health;
+	private int vida;
 	[SerializeField]
 	private AudioSource laserCrash;//Se debe sonar el sonido del choque
 									//con este script del planet en vez
@@ -40,8 +40,8 @@ public class Fracture : MonoBehaviour {
 	void colisionConLaser()
 	{
 		laserCrash.Play();
-		health--;
-		if (health <= 0)
+		vida--;
+		if (vida <= 0)
 		{
 			fracturarPlaneta();
 		}

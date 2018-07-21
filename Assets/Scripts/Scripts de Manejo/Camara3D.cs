@@ -2,6 +2,7 @@
 
 //TODO:
 //Mover de camara 2D a 3D mediante una animación
+[DisallowMultipleComponent]
 public class Camara3D : MonoBehaviour {
 
 	#region Variables

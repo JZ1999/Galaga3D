@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+[DisallowMultipleComponent]
 public class GenerateEnemy : MonoBehaviour
 {
 

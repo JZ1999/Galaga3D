@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-
+[DisallowMultipleComponent]
 public class seleccionar : MonoBehaviour {
 
 	#region Variables

@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
-
+[DisallowMultipleComponent]
 public class EnemyLaser : MonoBehaviour {
 
 	#region Variables
 	[SerializeField]
-	private float __velocidad;
-	private float __tiempo = 5f;
+	private float _velocidad;
+	private float _tiempo = 5f;
 	#endregion
 
 	#region Unity Methods
@@ -31,14 +31,14 @@ public class EnemyLaser : MonoBehaviour {
 
 	void movimientoLaser()
 	{
-		Vector3 nuevoVector3 = new Vector3(0, (-1)*__velocidad * Time.deltaTime, 0);
+		Vector3 nuevoVector3 = new Vector3(0, (-1)* _velocidad * Time.deltaTime, 0);
 		transform.Translate(nuevoVector3);
 	}
 
 	void vidaDeLaser()
 	{
-		__tiempo -= Time.deltaTime;
-		if (__tiempo < 0)
+		_tiempo -= Time.deltaTime;
+		if (_tiempo < 0)
 		{
 			Destroy(gameObject);
 
