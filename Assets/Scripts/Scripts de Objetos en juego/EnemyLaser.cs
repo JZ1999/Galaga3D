@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Laser : MonoBehaviour {
+public class EnemyLaser : MonoBehaviour {
 
 	#region Variables
 	[SerializeField]
@@ -21,7 +21,7 @@ public class Laser : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
-        if (obj.tag == "enemy")
+        if (obj.tag == "Player")
         {
             Destroy(gameObject);
         }
@@ -31,7 +31,7 @@ public class Laser : MonoBehaviour {
 
 	void movimientoLaser()
 	{
-		Vector3 nuevoVector3 = new Vector3(0, __velocidad * Time.deltaTime, 0);
+		Vector3 nuevoVector3 = new Vector3(0, (-1)*__velocidad * Time.deltaTime, 0);
 		transform.Translate(nuevoVector3);
 	}
 

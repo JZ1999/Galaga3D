@@ -24,7 +24,11 @@ public class Fracture : MonoBehaviour {
 		{
 			colisionConLaser();
 		}
-	}
+        if (obj.tag == "enemylaser")
+        {
+            colisionConLaser();
+        }
+    }
 
 	#endregion
 	void fracturarPlaneta()
