@@ -46,7 +46,7 @@ Muchos de los estándares vienen del libro **Clean Code: A Handbook of Agile Sof
 
 > 1. Utilizar el #region para funciones de Unity y para las Variables
 
-> 2. Utilizar barra baja para variables que no sean de las clases de Unity ejemplo: private int __var;
+> 2. Utilizar barra baja para variables que no sean de las clases de Unity ejemplo: private int var;
 
 > 3. Evitar clases mas grandes que 100 lineas
 
@@ -101,6 +101,8 @@ Muchos de los estándares vienen del libro **Clean Code: A Handbook of Agile Sof
 >```
 
 > 23. Para los objetos AudioSource al final del variable poner SND, para los de texto poner TXT y los transform poner TR.
+
+> 24. En caso de codigo ambiguo, comentar de forma correcta.
 ## Controles
 
 * Movimiento: A izquierda, D derecha

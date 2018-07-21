@@ -406,8 +406,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 54509424784963952}
-  _velocidad: 7
-  _rotacion: 1.5
+  _velocidad: 50
+  _rotacion: 2
 --- !u!114 &114585780058017738
 MonoBehaviour:
   m_ObjectHideFlags: 1
