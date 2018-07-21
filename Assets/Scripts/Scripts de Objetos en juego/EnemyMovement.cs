@@ -75,7 +75,7 @@ public class EnemyMovement : MonoBehaviour
 
     int conseguirMovimiento()
     {
-        if (Random.Range(-30, 30) == 0)
+        if (Random.Range(-10, 10) == 0)
         {
             _cambiardireccion = _cambiardireccion*(-1);
             return 1*_cambiardireccion;
