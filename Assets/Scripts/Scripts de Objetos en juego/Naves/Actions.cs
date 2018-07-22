@@ -7,7 +7,7 @@ public class Actions : MonoBehaviour {
 	[SerializeField]
 	private GameObject laser;
 	[SerializeField]
-	private PlayerInfo MARKI;
+	private PlayerInfo naveInfo;
 	private float __cooldownDeDisparo;
 	private float __cooldownDeHabilidad;
 	private float __duracionHabilidad;
@@ -21,13 +21,13 @@ public class Actions : MonoBehaviour {
 	#region Unity Methods
 
 	void Start () {
-		__cooldownDeDisparo = MARKI.cooldown;
-		__cooldownDeHabilidad = MARKI.cooldownHabilidad;
-		__duracionHabilidad = MARKI.duracionHabilidad;
+		__cooldownDeDisparo = naveInfo.cooldown;
+		__cooldownDeHabilidad = naveInfo.cooldownHabilidad;
+		__duracionHabilidad = naveInfo.duracionHabilidad;
 		laserSND = gameObject.GetComponent<AudioSource>();
-		__cooldownDeDisparo_cp = MARKI.cooldown;
-		__cooldownDeAbilidad_cp = MARKI.cooldownHabilidad;
-		__duracionHabilidad_cp = MARKI.duracionHabilidad;
+		__cooldownDeDisparo_cp = naveInfo.cooldown;
+		__cooldownDeAbilidad_cp = naveInfo.cooldownHabilidad;
+		__duracionHabilidad_cp = naveInfo.duracionHabilidad;
 	}
     
     void Update () {

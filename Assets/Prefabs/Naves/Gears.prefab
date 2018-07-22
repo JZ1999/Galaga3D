@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 1046723831606960, guid: 6776ae197e1ca224199ecabb6de3aff9, type: 2}
-  MARKI: {fileID: 11400000, guid: 7cb6bc3ff45e0a541a6f6f7e7ce696c3, type: 2}
+  naveInfo: {fileID: 11400000, guid: 0b6d3c834024e8345a291a2332ec00e0, type: 2}
 --- !u!136 &136163781228480006
 CapsuleCollider:
   m_ObjectHideFlags: 1

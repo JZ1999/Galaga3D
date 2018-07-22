@@ -1,51 +1,64 @@
 ﻿using UnityEngine;
 [DisallowMultipleComponent]
-public class EnemyActions : MonoBehaviour
+public class EnemyActions : AbstractoEnemigo
 {
 
     #region Variables
     [SerializeField]
     private GameObject laserEnemigo;
     [SerializeField]
-    private PlayerInfo MARKI;
+    private EnemigoInfo naveInfo;
     private float __cooldownDeDisparo;
     private float __cooldownDeHabilidad;
     private float __duracionHabilidad;
     private AudioSource laserSND;
     private float __cooldownDeDisparo_cp;
-    private float __cooldownDeAbilidad_cp;
-    private bool __laserVault; //Dice si abilidad está activada
+    private float __cooldownDeHabilidad_cp;
+    private bool __habilidadActiva;
     private float __duracionHabilidad_cp;
+	private EnemigoInfo.habilidades _habilidad;
     #endregion
 
     #region Unity Methods
 
     void Start()
     {
-        __cooldownDeDisparo = MARKI.cooldown;
-        __cooldownDeHabilidad = MARKI.cooldownHabilidad;
-        __duracionHabilidad = MARKI.duracionHabilidad;
+        __cooldownDeDisparo = naveInfo.cooldown;
+        __cooldownDeHabilidad = naveInfo.cooldownHabilidad;
+        __duracionHabilidad = naveInfo.duracionHabilidad;
         laserSND = gameObject.GetComponent<AudioSource>();
-        __cooldownDeDisparo_cp = MARKI.cooldown;
-        __cooldownDeAbilidad_cp = MARKI.cooldownHabilidad;
-        __duracionHabilidad_cp = MARKI.duracionHabilidad;
+        __cooldownDeDisparo_cp = naveInfo.cooldown;
+        __cooldownDeHabilidad_cp = naveInfo.cooldownHabilidad;
+        __duracionHabilidad_cp = naveInfo.duracionHabilidad;
+		_habilidad = naveInfo.habilidad;
     }
 
     void Update()
     {
-        calcularCooldowns();
+		calcularCooldowns();
+		if (__habilidadActiva)
+		{
+			Debug.Log(base.usarHabilidad(_habilidad, gameObject));
+		}
         if (disparar() && !cooldownActivoDisparar())
         {
             crearLaser();
         }
-    }
+		if (!cooldownActivoHabilidad())
+		{
+			activarHabilidad();
+		}
+	}
     #endregion
 
-    void activarHabilidad()
+	void activarHabilidad()
     {
-        __duracionHabilidad = __duracionHabilidad_cp;
-        __laserVault = true;
-        __cooldownDeHabilidad = __cooldownDeAbilidad_cp;
+		if (_habilidad != EnemigoInfo.habilidades.NINGUNA)
+		{
+			__duracionHabilidad = __duracionHabilidad_cp;
+			__cooldownDeHabilidad = __cooldownDeHabilidad_cp;
+			__habilidadActiva = true;
+		}
     }
 
     void crearLaser()
@@ -63,19 +76,13 @@ public class EnemyActions : MonoBehaviour
 
     void calcularCooldowns()
     {
-        __cooldownDeDisparo = calcularCooldownDisparo();
         __cooldownDeDisparo -= Time.deltaTime;
         __duracionHabilidad -= Time.deltaTime;
         if (habilidadTermino())
         {
             __cooldownDeHabilidad -= Time.deltaTime;
-            __laserVault = false;
+			__habilidadActiva = false;
         }
-    }
-
-    float calcularCooldownDisparo()
-    {
-        return __laserVault ? __cooldownDeDisparo / 2 : __cooldownDeDisparo;
     }
 
     bool cooldownActivoHabilidad()

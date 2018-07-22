@@ -3,8 +3,8 @@
 [DisallowMultipleComponent]
 public class Informacion : MonoBehaviour
 {
-	static public int J1;
-	static public GameObject[] navesObject;
+	static public int J1;//Decide cual indice es el jugador para escojer la nave
+	static public GameObject[] navesObject;//Contiene las naves disponibles
 	public GameObject[] navesObjectaux;
 
 	//TODO:
@@ -14,6 +14,7 @@ public class Informacion : MonoBehaviour
 	{
 		MARKI, Gears
 	}
+
 
 	void Start()
 	{

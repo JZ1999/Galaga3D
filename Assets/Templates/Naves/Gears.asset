@@ -11,11 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32599e2de5ec9bc4ca543c26127f9180, type: 3}
   m_Name: Gears
   m_EditorClassIdentifier: 
-  health: 3
-  ability: 5
-  cooldown: 2.1
-  abilityCooldown: 18
-  abilityDuration: 5
-  damage: 2
-  shipName: Gears
-  description: "Gears y sus explosiones dan una ventaja en da\xF1o de area."
+  vida: 4
+  habilidad: 5
+  cooldown: 2
+  cooldownHabilidad: 25
+  duracionHabilidad: 7
+  danno: 1
+  nombreDeNave: Gears
+  descripcion: Gears usa los explosivos para tener control de area.

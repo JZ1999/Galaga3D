@@ -16,6 +16,7 @@ MonoBehaviour:
   cooldown: 0.8
   cooldownHabilidad: 20
   duracionHabilidad: 4
-  danno: 0
-  nombreDeNave: 
-  descripcion: 
+  danno: 1
+  nombreDeNave: MARK I
+  descripcion: Aprovecha la habilidad de Vault para disparar a una velocidad mucho
+    mas rapidad.

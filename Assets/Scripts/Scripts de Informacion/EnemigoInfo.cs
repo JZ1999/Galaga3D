@@ -1,24 +1,20 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "NuevaNave", menuName ="Nave")]
-public class PlayerInfo : ScriptableObject {
+[CreateAssetMenu(fileName = "NuevoEnemigo", menuName = "Enemigo/Basico")]
+public class EnemigoInfo : ScriptableObject {
+
 	/*
-		Contiene información sobre las naves disponibles
-		al jugador.
+	Contiene información de los enemigos
 	*/
 
-	#region Variables
-
-	//TODO:
-	//Cambiar este enum y sus valores para que tengan
-	//las habilidades finales del juego
 	public enum habilidades
 	{
-		VELOCIDAD, VIDA, REGENERACION, ESCUDO, VELOCIDADDEATAQUE, EXPLOSIVOS
-	};
+		NINGUNA, INVISIBILIDAD
+	}
 
+	#region Variables
 	[Header("Stats")]
-	[Range(2f, 6f)]
+	[Range(2f, 20f)]
 	public int vida;
 	public habilidades habilidad;
 	[Range(0.7f, 3f)]
@@ -26,7 +22,7 @@ public class PlayerInfo : ScriptableObject {
 	public float cooldown;
 	public float cooldownHabilidad;
 	public float duracionHabilidad;
-	[Range(1f,6f)]
+	[Range(0.1f, 5f)]
 	public int danno;
 
 	[Space]
@@ -35,8 +31,5 @@ public class PlayerInfo : ScriptableObject {
 	public string nombreDeNave;
 	[TextArea]
 	public string descripcion;
-
-
 	#endregion
-
 }

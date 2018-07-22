@@ -85,11 +85,15 @@ public class EnemyMovement : MonoBehaviour
 
     int aplicarRotacion(int _dir)
     {
-        float _z = transform.rotation.z;
+		//TODO:
+		//La rotación hay que implementarla de otra forma con los enemigos,
+		//ya que de esta forma no sirve bien
+
+        /*float _z = transform.rotation.z;
         //Un limite a la cantidad de rotacion que uno puede tener
-        bool _puedeRotar = _z > -0.13 && _z < 0.13;
-        bool _puedeRotarIzquierda = _z > -0.13;
-        bool _puedeRotarDerecha = _z < 0.13;
+        bool _puedeRotar = _z > 0.67 && _z < 0.9;
+        bool _puedeRotarIzquierda = _z > 0.67;
+        bool _puedeRotarDerecha = _z < 0.9;
 
         if (_puedeRotar)
             transform.Rotate(new Vector3(0, 0, _rotacion * -_dir));
@@ -97,6 +101,7 @@ public class EnemyMovement : MonoBehaviour
             transform.Rotate(new Vector3(0, 0, _rotacion * -_dir));
         else if (!_puedeRotarDerecha && _dir == -1)
             transform.Rotate(new Vector3(0, 0, _rotacion * -_dir));
+			*/
         return _dir;
     }
 
