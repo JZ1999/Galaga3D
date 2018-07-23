@@ -43,6 +43,7 @@ public class ShipHealth : MonoBehaviour {
 	{
 		if (_vida == 0)
 		{
+			Informacion.muerto = true;
 			Destroy(gameObject);
 		}
 	}

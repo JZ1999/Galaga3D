@@ -22,7 +22,15 @@ public class Camara3D : MonoBehaviour {
 
 	private void LateUpdate()
 	{
-		jugadorTR = GameObject.FindGameObjectWithTag("Player").transform;
+		if (!Informacion.muerto)
+		{
+			jugadorTR = GameObject.FindGameObjectWithTag("Player").transform;
+		}
+		else
+		{
+			jugadorTR = null;
+		}
+		
 	}
 
 	void FixedUpdate () {
