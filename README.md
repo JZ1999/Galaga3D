@@ -132,7 +132,9 @@ Se hacen sprints de 3 semanas, en el cual cada sprint va estar conformado por es
 3. **Testing**
 4. **Revisión**
 
-Aplicaremos el sprint usando esta pagina web [**scrumblr.ca/prototipounity**](http://scrumblr.ca/prototipounity). 
+Aplicaremos el sprint usando esta pagina web [**scrumblr.ca/prototipounity**](http://scrumblr.ca/prototipounity).
+**En esa pagina los que tengan puntos rojos son los mas importantes**.
+
 Se usa este modelo:
 
 |[Backlog](https://programacionymas.com/blog/scrum-product-backlog)|Pendiente|Comenzando|Testing|Revision|Completo|
