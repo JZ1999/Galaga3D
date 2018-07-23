@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80c6e43c8fd0e314d98f8e1ee811c880, type: 3}
-  m_Name: EnemigoBasico1
+  m_Name: sdas
   m_EditorClassIdentifier: 
   vida: 2
   habilidad: 0
-  cooldown: 1.4
+  cooldown: 0
   cooldownHabilidad: 0
   duracionHabilidad: 0
-  danno: 1
-  nombreDeNave: Enemigo Basico
-  descripcion: Enemigo debil y basico, pero en grupos pueden ser letales.
+  danno: 0
+  nombreDeNave: 
+  descripcion: 

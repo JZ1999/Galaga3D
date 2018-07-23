@@ -12,6 +12,7 @@ public class EnemigoInfo : ScriptableObject {
 		NINGUNA, INVISIBILIDAD
 	}
 
+	
 	#region Variables
 	[Header("Stats")]
 	[Range(2f, 20f)]

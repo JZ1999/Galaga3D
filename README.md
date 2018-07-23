@@ -22,6 +22,14 @@ git clone http://github.com/JZ1999/Galaga3D.git
 ```
 **[Descarga de Juego]()**
 
+## Controles
+
+* Movimiento: A izquierda, D derecha
+* Ataque: Barra de espacio
+* Habilidad: Q
+* Pausa: Esc
+
+
 ## Estandar de Versiones
 
 * **_Versión de Unity_**: 2018.1.8
@@ -110,12 +118,42 @@ Muchos de los estándares vienen del libro [**Clean Code: A Handbook of Agile So
 > 26. Utilizar Atributos de Unity en todo momento que se pueda aplicar como el [[Tooltip()]](https://docs.unity3d.com/ScriptReference/TooltipAttribute.html), [[Space]](https://docs.unity3d.com/ScriptReference/SpaceAttribute.html), [[Range()]](https://docs.unity3d.com/ScriptReference/SocialPlatforms.Range.html), etc.
 
 > 27. No usar ningún caracter que no sea de [ASCII](https://www.asciitable.com/). Utilizar doble **n** en vez de **ñ**
-## Controles
 
-* Movimiento: A izquierda, D derecha
-* Ataque: Barra de espacio
-* Habilidad: Q
-* Pausa: Esc
+## Desarrollo Scrum
+
+Usamos el modelo de [Scrum](https://es.wikipedia.org/wiki/Scrum_(desarrollo_de_software)) con unas alteraciones para desarrollar este juego.
+
+[![Video de Scrum](http://img.youtube.com/vi/a33xOe9d_Dk/0.jpg)](http://www.youtube.com/watch?v=a33xOe9d_DkE)
+
+Se hacen sprints de 3 semanas, en el cual cada sprint va estar conformado por estas 4 etapas:
+
+1. **Planear**
+2. **Crear**
+3. **Testing**
+4. **Revisión**
+
+Aplicaremos el sprint usando esta pagina web [**scrumblr.ca/prototipounity**](http://scrumblr.ca/prototipounity). 
+Se usa este modelo:
+
+|[Backlog](https://programacionymas.com/blog/scrum-product-backlog)|Pendiente|Comenzando|Testing|Revision|Completo|
+| ------------- |:-------------:| -----:|
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
+
+En vez de hacer reuniones todo los dias como se hace en scrum,
+se harán reuniones cada fin de semana para hablar sobre modificaciones,
+ implementaciones y arreglo de bugs, problemas que a tenido, aportes para el juego,
+opiniones del juego y workflow, y tener una conversacion sobre cosas de ese tipo.
+Cada reunion que tengamos vamos a ir aportando al backlog.
+
+Usando los valores y principios de [Agile](https://es.wikipedia.org/wiki/Desarrollo_%C3%A1gil_de_software) debemos tener bastante comunicacion para tener resultados deseables.
+
+**Cada sprint es importante tener un producto usable y potencialmente listo para que sea un build**
+
 
 ## Creditos
 
