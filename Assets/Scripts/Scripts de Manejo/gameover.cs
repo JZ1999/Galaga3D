@@ -27,6 +27,7 @@ public class gameover : MonoBehaviour {
 		menuUI.active = false;
 		Time.timeScale = 1f;
 		Informacion.muerto = false;
+		Camara3D.tiempo = 5f;//Darle n segundos de espera para que todo cargue
 		SceneManager.LoadScene(2);
 	}
 

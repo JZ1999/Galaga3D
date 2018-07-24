@@ -13,16 +13,22 @@ public class Camara3D : MonoBehaviour {
 	[SerializeField]
 	private Vector3 offset;
 
-	public float tiempo = 5f;//Que tenga un tiempo dado antes de que empiece
-				//a llamar la funcion conseguirJugadorTR() debido a
-				//que sino causa un error de objeto null.
+	static public float tiempo;//Que tenga un tiempo dado antes de que empiece
+						//a llamar la funcion conseguirJugadorTR() debido a
+						//que sino causa un error de objeto null.
 	#endregion
 
 	#region Unity Methods
 
+	private void Awake()
+	{
+		tiempo = 5f;
+	}
+
 	private void LateUpdate()
 	{
 		tiempo -= Time.deltaTime;
+		Debug.Log(tiempo);
 		if(tiempo <= 0)
 		{
 			conseguirJugadorTR();
