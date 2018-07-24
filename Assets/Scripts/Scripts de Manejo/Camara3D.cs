@@ -28,7 +28,6 @@ public class Camara3D : MonoBehaviour {
 	private void LateUpdate()
 	{
 		tiempo -= Time.deltaTime;
-		Debug.Log(tiempo);
 		if(tiempo <= 0)
 		{
 			conseguirJugadorTR();

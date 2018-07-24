@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32599e2de5ec9bc4ca543c26127f9180, type: 3}
   m_Name: MARKI
   m_EditorClassIdentifier: 
-  vida: 2
+  vida: 3
   habilidad: 0
   cooldown: 0.8
   cooldownHabilidad: 20
