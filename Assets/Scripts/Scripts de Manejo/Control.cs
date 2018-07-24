@@ -12,11 +12,12 @@ public class Control : MonoBehaviour {
 
 	#region Unity Methods
 
-	void Start()
+	void Awake()
 	{
 		nave = naves[Informacion.J1];
 		Quaternion rotacionVertical = Quaternion.Euler(new Vector3(270, 0, 0));
-		Instantiate(nave, Vector3.zero, rotacionVertical);
+		Debug.Log(Instantiate(nave, Vector3.zero, rotacionVertical));
+		
 	}
 	#endregion
 }

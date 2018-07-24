@@ -15,7 +15,7 @@ public class actvarCamaras : MonoBehaviour {
 
 	#region Unity Methods
     
-	void Start()
+	void Awake()
 	{
 		camaras[0].GetComponent<Camera>().enabled = true;
 		camaras[1].GetComponent<Camera>().enabled = false;

@@ -12,24 +12,22 @@ public class Camara3D : MonoBehaviour {
 	private float _velocidadCamara = 0.25f;
 	[SerializeField]
 	private Vector3 offset;
+
+	public float tiempo = 5f;//Que tenga un tiempo dado antes de que empiece
+				//a llamar la funcion conseguirJugadorTR() debido a
+				//que sino causa un error de objeto null.
 	#endregion
 
 	#region Unity Methods
 
-	void Start () {
-		//jugadorTR = GameObject.FindGameObjectWithTag("Player").transform;
-	}
-
 	private void LateUpdate()
 	{
-		if (!Informacion.muerto)
+		tiempo -= Time.deltaTime;
+		if(tiempo <= 0)
 		{
-			jugadorTR = GameObject.FindGameObjectWithTag("Player").transform;
+			conseguirJugadorTR();
 		}
-		else
-		{
-			jugadorTR = null;
-		}
+		
 		
 	}
 
@@ -44,5 +42,17 @@ public class Camara3D : MonoBehaviour {
 		}
     }
 
-    #endregion
+	#endregion
+
+	void conseguirJugadorTR()
+	{
+		if (!Informacion.muerto)
+		{
+			jugadorTR = GameObject.FindGameObjectWithTag("Player").transform;
+		}
+		else
+		{
+			jugadorTR = null;
+		}
+	}
 }
