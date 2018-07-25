@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 
-//TODO:
-//-remover variable _x y reemplazarla
 [DisallowMultipleComponent]
 public class CambiarCamara : MonoBehaviour {
 
 	#region Variables
 	[SerializeField]
 	private GameObject[] camaras;
+	[SerializeField]
+	private KeyCode tecla;
 	int _seleccioncamara; //Decide cual cámara se activa la proxima vez que se presione el botón para cambio de cámara
 	#endregion
 
@@ -20,7 +20,7 @@ public class CambiarCamara : MonoBehaviour {
 	}
 
     void Update () {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(tecla))
         {
             if (_seleccioncamara == 1)
             {

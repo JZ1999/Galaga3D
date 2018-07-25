@@ -639,6 +639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d421ad122d826f44a65cb38a8bddfaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tagDelJugador: Player
   _velocidadCamara: 0.25
   offset: {x: 0, y: -1.7, z: -0.91}
 --- !u!1 &434997313
@@ -1958,6 +1959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20911f78651ef54428895454d47f9025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tagDelJugador: Player
   _tiempoInicial: 5
   planet: {fileID: 1679520849384690, guid: eca9a6cbb0701ab498d3752d272f735e, type: 2}
 --- !u!114 &1638144190
@@ -1986,6 +1988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d740702e7c95f52479e268f0bba5fa40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tagDelJugador: Player
   _tiempoInicial: 5
   enemies:
   - {fileID: 1875910642404628, guid: 07d3e9eb63544e84486d25d71d7e6616, type: 2}

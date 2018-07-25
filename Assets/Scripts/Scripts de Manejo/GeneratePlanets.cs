@@ -3,15 +3,19 @@
 public class GeneratePlanets : MonoBehaviour {
 
 	#region Variables
-	public float _tiempoInicial;//Tiempo inicial por cada spawn
-							//ya despues se randomiza según el spawn inicial
-	public GameObject planet;
+	[SerializeField]
+	private string _tagDelJugador;
+	[SerializeField] float _tiempoInicial;//Tiempo inicial por cada spawn
+										  //ya despues se randomiza según el spawn inicial
+	[SerializeField] GameObject planet;
 	private float _tiempoInicial_cp;
-    #endregion
+	private Transform posicionJugadorTR;
+	#endregion
 
-    #region Unity Methods
+	#region Unity Methods
 
-    void Start () {
+	void Start () {
+		posicionJugadorTR = GameObject.FindGameObjectWithTag(_tagDelJugador).transform;
 		_tiempoInicial_cp = _tiempoInicial;
     }
     
@@ -19,16 +23,24 @@ public class GeneratePlanets : MonoBehaviour {
 		_tiempoInicial -= 1 * Time.deltaTime;
 		if(_tiempoInicial < 0)
 		{
-			spawnearPlaneta();
+			spawnearPlaneta(calcularVector());
 		}
     }
     #endregion
 
-	void spawnearPlaneta()
+	Vector3 calcularVector()
 	{
 		float _rand = Random.Range(-5.5f, 5.5f);
-		Vector3 posicionAleatoria = new Vector3(_rand, 6.3f, 0);
-		Instantiate(planet, posicionAleatoria, Quaternion.identity);
+		Vector3 posicionAleatoria = new Vector3(_rand, 0f, 0);
+		float _offsetY = 7f;//puede ser modificado
+		Vector3 offset = new Vector3(0,_offsetY,0);
+		Vector3 posicionDeseada = posicionAleatoria + posicionJugadorTR.position + offset;
+		return posicionDeseada;
+	}
+
+	void spawnearPlaneta(Vector3 posicion)
+	{
+		Instantiate(planet, posicion, Quaternion.identity);
 		_tiempoInicial = _tiempoInicial_cp + Random.Range(-_tiempoInicial_cp + 1, 2 * _tiempoInicial_cp);//Puede ser modificado
 	}
 }

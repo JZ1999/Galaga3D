@@ -6,7 +6,8 @@
 public class Camara3D : MonoBehaviour {
 
 	#region Variables
-	
+	[SerializeField]
+	private string _tagDelJugador;
 	private Transform jugadorTR;
 	[SerializeField]
 	private float _velocidadCamara = 0.25f;
@@ -53,7 +54,7 @@ public class Camara3D : MonoBehaviour {
 	{
 		if (!Informacion.muerto)
 		{
-			jugadorTR = GameObject.FindGameObjectWithTag("Player").transform;
+			jugadorTR = GameObject.FindGameObjectWithTag(_tagDelJugador).transform;
 		}
 		else
 		{

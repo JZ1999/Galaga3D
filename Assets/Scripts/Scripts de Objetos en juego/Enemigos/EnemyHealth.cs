@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+
 [DisallowMultipleComponent]
 public class EnemyHealth : MonoBehaviour
 {
@@ -9,11 +9,16 @@ public class EnemyHealth : MonoBehaviour
     private EnemigoInfo naveInfo;
     private int _vida;
     private float[] _colores;
-    #endregion
 
-    #region Unity Methods
+	[SerializeField]
+	private string _tagDelPlaneta;
+	[SerializeField]
+	private string _tagDelLaser;
+	#endregion
 
-    void Start()
+	#region Unity Methods
+
+	void Start()
     {
         _vida = naveInfo.vida;
     }
@@ -44,11 +49,11 @@ public class EnemyHealth : MonoBehaviour
 
     bool tocaPlaneta(Collider obj)
     {
-        return obj.tag == "planet";
+        return obj.tag == _tagDelPlaneta;
     }
     bool tocaLaser(Collider obj)
     {
-        return obj.tag == "laser";
+        return obj.tag == _tagDelLaser;
     }
 
     void bajarVida()

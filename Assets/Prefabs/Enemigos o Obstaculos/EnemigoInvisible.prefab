@@ -420,6 +420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   naveInfo: {fileID: 11400000, guid: c11f032d70d9d964d992e3490951e62b, type: 2}
+  _tagDelPlaneta: planet
+  _tagDelLaser: laser
 --- !u!136 &136163781228480006
 CapsuleCollider:
   m_ObjectHideFlags: 1

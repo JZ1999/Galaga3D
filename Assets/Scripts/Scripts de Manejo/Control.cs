@@ -16,7 +16,7 @@ public class Control : MonoBehaviour {
 	{
 		nave = naves[Informacion.J1];
 		Quaternion rotacionVertical = Quaternion.Euler(new Vector3(270, 0, 0));
-		Debug.Log(Instantiate(nave, Vector3.zero, rotacionVertical));
+		Instantiate(nave, Vector3.zero, rotacionVertical);
 		
 	}
 	#endregion

@@ -5,7 +5,7 @@ public class despawnFractured : MonoBehaviour {
 
     #region Variables
 	[SerializeField]
-	private float __tiempoDespawn;
+	private float _tiempoDespawn;
 	[SerializeField]
 	private AudioSource explosionSND;
 	#endregion
@@ -17,8 +17,8 @@ public class despawnFractured : MonoBehaviour {
     }
     
     void Update () {
-		__tiempoDespawn -= Time.deltaTime;
-        if(__tiempoDespawn < 0)
+		_tiempoDespawn -= Time.deltaTime;
+        if(_tiempoDespawn < 0)
 		{
 			Destroy(gameObject);
 		}

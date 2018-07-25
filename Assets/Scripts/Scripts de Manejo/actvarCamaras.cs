@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
 //TODO:
-//-remover variable _x y reemplazarla
+//-Remover este script si no se van a usar
+//temporizadores para activar las camaras
 [DisallowMultipleComponent]
 public class actvarCamaras : MonoBehaviour {
 

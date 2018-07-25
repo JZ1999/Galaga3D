@@ -28,6 +28,7 @@ git clone http://github.com/JZ1999/Galaga3D.git
 * Ataque: Barra de espacio
 * Habilidad: Q
 * Pausa: Esc
+* Cambiar De Camara: F
 
 
 ## Estandar de Versiones
@@ -79,7 +80,7 @@ Muchos de los estándares vienen del libro [**Clean Code: A Handbook of Agile So
 
 > 13. Evitar hacer un git commit con bugs del codigo que editaste, o que buguee el codigo de alguien mas
 
-> 14. Por modularización, no hacer variables publicos (Hay excepciones), utilize el decorador [[Serializable]](https://docs.unity3d.com/ScriptReference/Serializable.html) en vez
+> 14. Por modularización, no hacer variables publicos (Hay excepciones), utilize el directivo [[Serializable]](https://docs.unity3d.com/ScriptReference/Serializable.html) en vez
 
 > 15. Poner el codigo en sus carpetas respectivas (Scripts de objetos, de manejo y de informacion). Los de objetos son los que tienen una relacion directa con objetos.
 >Los de manejo son los que controlan la escena como los objetos Managers. De ultimo, los de información guardan cosas como la información de las naves para poder tener acceso

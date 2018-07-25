@@ -2653,7 +2653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd96291b1a09e7d46bb285974ef3d66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  __tiempoDespawn: 7
+  _tiempoDespawn: 10
   explosionSND: {fileID: 82408798508841088}
 --- !u!114 &114809323767060454
 MonoBehaviour:
