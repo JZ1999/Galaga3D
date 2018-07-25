@@ -13,11 +13,13 @@ public class Movement : MonoBehaviour {
 
     #region Unity Methods
     
-    void Update () {
-		int _movimiento = aplicarRotacion(conseguirMovimiento());
-		if (seEstaMoviendo(_movimiento))
+    void FixedUpdate () {
+		int _movimiento_horizontal = aplicarRotacion(conseguirMovimientoHorizontal());
+        int _movimiento_vertical = conseguirMovimientoVertical();
+
+        if (seEstaMoviendo(_movimiento_horizontal, _movimiento_vertical))
 		{
-			aplicarMovimiento(_movimiento);
+			aplicarMovimiento(_movimiento_horizontal, _movimiento_vertical);
 		}
 		if (pasoElLimite())
 		{
@@ -27,15 +29,16 @@ public class Movement : MonoBehaviour {
 
     #endregion
 
-	void aplicarMovimiento(int _movimiento)
+	void aplicarMovimiento(int _movimientoH, int _movimientoV)
 	{
-		float new_x = _velocidad * Time.deltaTime * _movimiento * 5;
-		rb.AddForce(new Vector3(new_x, 0, 0));
-	}
+        float new_x = _velocidad * Time.deltaTime * _movimientoH*5;
+        float new_y = _velocidad * Time.deltaTime * _movimientoV*5;
+        rb.AddForce(new Vector3(new_x, new_y, 0));
+    }
 
-	bool seEstaMoviendo(int _movimiento)
+	bool seEstaMoviendo(int _movimientoH, int _movimientoV)
 	{
-		return _movimiento != 0;
+		return (_movimientoH != 0 || _movimientoV != 0);
 	}
 
 	void detenerYmoverALadoContrario()
@@ -57,7 +60,7 @@ public class Movement : MonoBehaviour {
 		return transform.position.x > 4.5 || transform.position.x < -4.5;
 	}
 
-	int conseguirMovimiento()
+	int conseguirMovimientoHorizontal()
 	{
 		if (Input.GetKey(KeyCode.A))
 			return -1;
@@ -66,7 +69,16 @@ public class Movement : MonoBehaviour {
 		return 0;
 	}
 
-	int aplicarRotacion(int _dir)
+    int conseguirMovimientoVertical()
+    {
+        if (Input.GetKey(KeyCode.S))
+            return -1;
+        else if (Input.GetKey(KeyCode.W))
+            return 1;
+        return 0;
+    }
+
+    int aplicarRotacion(int _dir)
 	{
 		float _z = transform.rotation.z;
 		//Un limite a la cantidad de rotacion que uno puede tener
