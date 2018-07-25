@@ -1914,6 +1914,7 @@ GameObject:
   - component: {fileID: 1638144189}
   - component: {fileID: 1638144190}
   - component: {fileID: 1638144191}
+  - component: {fileID: 1638144192}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1968,7 +1969,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1638144186}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8dc7972b38007a044bd8349bbb0aab2c, type: 3}
   m_Name: 
@@ -1990,8 +1991,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tagDelJugador: Player
   _tiempoInicial: 5
-  enemies:
+  enemigos:
   - {fileID: 1875910642404628, guid: 07d3e9eb63544e84486d25d71d7e6616, type: 2}
+--- !u!114 &1638144192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1638144186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec2018ff9132ef54289edb2577c5a50f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camaras:
+  - {fileID: 282840810}
+  - {fileID: 431707658}
+  tecla: 102
 --- !u!1 &1755103510
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,11 +9,22 @@ public class Movement : MonoBehaviour {
 	private float _velocidad;
 	[SerializeField]
 	private float _rotacion;
-    #endregion
+	[SerializeField]
+	private float _bordeHorizontal;
 
-    #region Unity Methods
-    
-    void FixedUpdate () {
+	[SerializeField]
+	private KeyCode izquierda;
+	[SerializeField]
+	private KeyCode derecha;
+	[SerializeField]
+	private KeyCode arriba;
+	[SerializeField]
+	private KeyCode abajo;
+	#endregion
+
+	#region Unity Methods
+
+	void FixedUpdate () {
 		int _movimiento_horizontal = aplicarRotacion(conseguirMovimientoHorizontal());
         int _movimiento_vertical = conseguirMovimientoVertical();
 
@@ -52,28 +63,28 @@ public class Movement : MonoBehaviour {
 	{
 		//Devuelve un vector3 dependiendo de cual border tocó
 		//para poder moverlo al lado contrario
-		return transform.position.x > 4.5 ? Vector3.left : Vector3.right;
+		return transform.position.x > _bordeHorizontal ? Vector3.left : Vector3.right;
 	}
 
 	bool pasoElLimite()
 	{
-		return transform.position.x > 4.5 || transform.position.x < -4.5;
+		return transform.position.x > _bordeHorizontal || transform.position.x < -_bordeHorizontal;
 	}
 
 	int conseguirMovimientoHorizontal()
 	{
-		if (Input.GetKey(KeyCode.A))
+		if (Input.GetKey(izquierda))
 			return -1;
-		else if (Input.GetKey(KeyCode.D))
+		else if (Input.GetKey(derecha))
 			return 1;
 		return 0;
 	}
 
     int conseguirMovimientoVertical()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(abajo))
             return -1;
-        else if (Input.GetKey(KeyCode.W))
+        else if (Input.GetKey(arriba))
             return 1;
         return 0;
     }

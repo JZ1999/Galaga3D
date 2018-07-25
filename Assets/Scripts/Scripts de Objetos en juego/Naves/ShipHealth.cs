@@ -6,16 +6,23 @@ public class ShipHealth : MonoBehaviour {
 	#region Variables
 	[SerializeField]
 	private PlayerInfo naveInfo;
+	[SerializeField]
+	private AudioSource golpeSND;
 	[HideInInspector]
 	public Text vidaTXT;
 	private int _vida;
 	private float[] _colores;
 	private float _porcentajeRojo;
-    #endregion
 
-    #region Unity Methods
+	[SerializeField]
+	private string _tagDelPlanet;
+	[SerializeField]
+	private string _tagDelLaserEnemigo;
+	#endregion
 
-    void Start () {
+	#region Unity Methods
+
+	void Start () {
 		vidaTXT = FindObjectOfType<Text>();
 		_vida = naveInfo.vida;
 		vidaTXT.text = naveInfo.vida.ToString();
@@ -25,36 +32,37 @@ public class ShipHealth : MonoBehaviour {
 
 	void OnTriggerEnter(Collider obj)
 	{
-		if (tocaPlaneta(obj))
+		if (tocaPlaneta(obj) || tocaLaser(obj))
 		{
+			tocarSonido();
 			bajarVida();
 		}
-        if (tocaLaser(obj))
-        {
-            bajarVida();
-        }
 
-        muerto();
+		if(_vida == 0)
+			muerto();
 	}
 
     #endregion
 
+	void tocarSonido()
+	{
+		golpeSND.Play();
+	}
+
 	void muerto()
 	{
-		if (_vida == 0)
-		{
-			Informacion.muerto = true;
-			Destroy(gameObject);
-		}
+		Informacion.muerto = true;
+		Destroy(gameObject);
 	}
 
 	bool tocaPlaneta(Collider obj)
 	{
-		return obj.tag == "planet";
+		return obj.tag == _tagDelPlanet;
 	}
+
     bool tocaLaser(Collider obj)
     {
-        return obj.tag == "enemylaser";
+        return obj.tag == _tagDelLaserEnemigo;
     }
 
     void bajarVida()

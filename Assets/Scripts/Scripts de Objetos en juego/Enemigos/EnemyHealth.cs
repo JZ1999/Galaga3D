@@ -7,7 +7,9 @@ public class EnemyHealth : MonoBehaviour
     #region Variables
     [SerializeField]
     private EnemigoInfo naveInfo;
-    private int _vida;
+	[SerializeField]
+	private AudioSource golpeSND;
+	private int _vida;
     private float[] _colores;
 
 	[SerializeField]
@@ -25,26 +27,26 @@ public class EnemyHealth : MonoBehaviour
 
     void OnTriggerEnter(Collider obj)
     {
-        if (tocaPlaneta(obj))
+        if (tocaPlaneta(obj) || tocaLaser(obj))
         {
-            bajarVida();
-        }
-        if (tocaLaser(obj))
-        {
+			tocarSonido();
             bajarVida();
         }
 
-        muerto();
+		if (_vida == 0)
+			muerto();
     }
 
     #endregion
 
+	void tocarSonido()
+	{
+		golpeSND.Play();
+	}
+
     void muerto()
     {
-        if (_vida == 0)
-        {
-            Destroy(gameObject);
-        }
+		Destroy(gameObject, 0.2f);
     }
 
     bool tocaPlaneta(Collider obj)

@@ -16,6 +16,11 @@ public class Actions : MonoBehaviour {
 	private float __cooldownDeAbilidad_cp;
 	private bool __laserVault; //Dice si abilidad está activada
 	private float __duracionHabilidad_cp;
+
+	[SerializeField]
+	private KeyCode dispararLaser;
+	[SerializeField]
+	private KeyCode habilidad;
 	#endregion
 
 	#region Unity Methods
@@ -60,7 +65,7 @@ public class Actions : MonoBehaviour {
 
 	bool disparar()
 	{
-		return Input.GetKeyDown(KeyCode.Space);
+		return Input.GetKeyDown(dispararLaser);
 	}
 
 	void calcularCooldowns()
@@ -97,6 +102,6 @@ public class Actions : MonoBehaviour {
 
 	bool usarHabilidad()
 	{
-		return Input.GetKeyDown(KeyCode.Q);
+		return Input.GetKeyDown(habilidad);
 	}
 }
