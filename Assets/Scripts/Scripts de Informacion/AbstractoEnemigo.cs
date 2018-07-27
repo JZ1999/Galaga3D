@@ -42,12 +42,10 @@ public abstract class AbstractoEnemigo : MonoBehaviour {
 				_convertirVisible = true;
 				if (alpha >= 1f)
 					_convertirVisible = false;
-				Debug.Log("volviendo visible");
 			}
 			else if(!_convertirVisible)
 			{
 				invisible(self);
-				Debug.Log("volviendo invisible");
 			}
 
 			return true;

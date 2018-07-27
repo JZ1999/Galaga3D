@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c6e43c8fd0e314d98f8e1ee811c880, type: 3}
   m_Name: EnemigoBasico1
   m_EditorClassIdentifier: 
-  vida: 2
+  vida: 1
   habilidad: 0
   cooldown: 1.4
   cooldownHabilidad: 0
