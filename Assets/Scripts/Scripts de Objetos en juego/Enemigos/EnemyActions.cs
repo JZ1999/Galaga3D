@@ -8,7 +8,16 @@ public class EnemyActions : AbstractoEnemigo
     private GameObject laserEnemigo;
     [SerializeField]
     private EnemigoInfo naveInfo;
-    private float __cooldownDeDisparo;
+
+	[SerializeField]
+	private float _tiempo;//Usado con la nave invisible
+	private float _tiempo_cp;
+	private int _repeticiones = 14;//Usado con la nave invisible
+	private int _repeticiones_cp;//Usado con la nave invisible
+	private float _tiempoInvisible = 5f;
+	private float _tiempoInvisible_cp = 5f;
+
+	private float __cooldownDeDisparo;
     private float __cooldownDeHabilidad;
     private float __duracionHabilidad;
     private AudioSource laserSND;
@@ -31,6 +40,9 @@ public class EnemyActions : AbstractoEnemigo
         __cooldownDeHabilidad_cp = naveInfo.cooldownHabilidad;
         __duracionHabilidad_cp = naveInfo.duracionHabilidad;
 		_habilidad = naveInfo.habilidad;
+		_tiempo_cp = _tiempo;
+		_repeticiones_cp = _repeticiones;
+
     }
 
     void Update()
@@ -38,8 +50,29 @@ public class EnemyActions : AbstractoEnemigo
 		calcularCooldowns();
 		if (__habilidadActiva)
 		{
-			Debug.Log(base.usarHabilidad(_habilidad, gameObject));
+			if (_tiempo <= 0)
+			{
+				if (_repeticiones >= (_repeticiones_cp / 2) || _tiempoInvisible <= 0)
+				{
+					base.usarHabilidad(_habilidad, gameObject);
+					_tiempo = _tiempo_cp;
+					_repeticiones -= 1;
+					if (_repeticiones <= 0)
+					{
+						_repeticiones = _repeticiones_cp;
+						__habilidadActiva = false;
+						_tiempoInvisible = _tiempoInvisible_cp;
+						base.usarHabilidad(EnemigoInfo.habilidades.VISIBLE , gameObject);
+					}
+				}
+				else
+				{
+					base.usarHabilidad(EnemigoInfo.habilidades.INVISIBLE, gameObject);
+					_tiempoInvisible -=Time.deltaTime;
+				}
+			}
 		}
+
         if (disparar() && !cooldownActivoDisparar())
         {
             crearLaser();
@@ -48,6 +81,7 @@ public class EnemyActions : AbstractoEnemigo
 		{
 			activarHabilidad();
 		}
+		_tiempo -= Time.deltaTime;
 	}
     #endregion
 

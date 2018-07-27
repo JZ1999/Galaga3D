@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-//Le agrega rigidbody a cada fracturacion del planeta
+//Le agrega rigidbody a cada fracturacion del planeta y setea el tag de todos
 [DisallowMultipleComponent]
 public class addGravity : MonoBehaviour {
 
@@ -11,6 +11,7 @@ public class addGravity : MonoBehaviour {
 
     void Start () {
 		gameObject.AddComponent<Rigidbody>();
+		gameObject.tag = "planet";
     }
 
 	void Update()

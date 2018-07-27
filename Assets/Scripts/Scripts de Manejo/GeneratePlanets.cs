@@ -30,11 +30,12 @@ public class GeneratePlanets : MonoBehaviour {
 
 	Vector3 calcularVector()
 	{
-		float _rand = Random.Range(-5.5f, 5.5f);
-		Vector3 posicionAleatoria = new Vector3(_rand, 0f, 0);
+		float _randX = Random.Range(-5.5f, 5.5f);
+		float _randY = Random.Range(6, 8.5f);
+		Vector3 posicionAleatoria = new Vector3(_randX, _randY, 0);
 		float _offsetY = 7f;//puede ser modificado
-		Vector3 offset = new Vector3(0,_offsetY,0);
-		Vector3 posicionDeseada = posicionAleatoria + posicionJugadorTR.position + offset;
+		Vector3 offset = new Vector3(0,_offsetY+posicionJugadorTR.position.y,0);
+		Vector3 posicionDeseada = posicionAleatoria + offset;
 		return posicionDeseada;
 	}
 

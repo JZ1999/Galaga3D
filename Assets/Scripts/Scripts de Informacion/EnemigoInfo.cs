@@ -9,13 +9,13 @@ public class EnemigoInfo : ScriptableObject {
 
 	public enum habilidades
 	{
-		NINGUNA, INVISIBILIDAD
+		NINGUNA, INVISIBILIDAD, VISIBLE, INVISIBLE
 	}
 
 	
 	#region Variables
 	[Header("Stats")]
-	[Range(2f, 20f)]
+	[Range(1f, 20f)]
 	public int vida;
 	public habilidades habilidad;
 	[Range(0.7f, 3f)]

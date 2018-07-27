@@ -14,8 +14,8 @@ MonoBehaviour:
   vida: 2
   habilidad: 1
   cooldown: 1.4
-  cooldownHabilidad: 5
-  duracionHabilidad: 6
+  cooldownHabilidad: 3
+  duracionHabilidad: 3
   danno: 1
   nombreDeNave: Nave Invisible
   descripcion: Cada X segundos puede irse completamente invisble.

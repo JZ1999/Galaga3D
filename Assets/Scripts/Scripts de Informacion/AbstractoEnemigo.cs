@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Threading;
 using UnityEngine;
 
 //TODO:
@@ -8,33 +7,69 @@ using UnityEngine;
 //Para las acciones del enemigos
 public abstract class AbstractoEnemigo : MonoBehaviour {
 
-    #region Variables
-
+	#region Variables
+	private bool _esInvisible;
+	static private bool _convertirVisible = false;
     #endregion
 
 	//Devuelve true solo si entró a alguno de los if
 	protected bool usarHabilidad(EnemigoInfo.habilidades habilidad, GameObject self)
 	{
-		if(habilidad == EnemigoInfo.habilidades.INVISIBILIDAD)
+		#region Visible
+		if(habilidad == EnemigoInfo.habilidades.VISIBLE)
 		{
-			StartCoroutine("Fade", self);
-			Debug.Log(self.GetComponentInChildren<MeshRenderer>().material.color);
+			Color c = self.GetComponentInChildren<MeshRenderer>().material.color;
+			c.a = 1f;
+			self.GetComponentInChildren<MeshRenderer>().material.color = c;
+		}
+		#endregion
+		#region Invisible
+		else if (habilidad == EnemigoInfo.habilidades.INVISIBLE)
+		{
+			Color c = self.GetComponentInChildren<MeshRenderer>().material.color;
+			c.a = 0f;
+			self.GetComponentInChildren<MeshRenderer>().material.color = c;
+		}
+		#endregion
+		#region Invisibilidad
+		else if (habilidad == EnemigoInfo.habilidades.INVISIBILIDAD)
+		{
+			float alpha = self.GetComponentInChildren<MeshRenderer>().material.color.a;
+			_esInvisible = (alpha <= 0.01) ? true : false;
+			if (_esInvisible || _convertirVisible)
+			{
+				visible(self);
+				_convertirVisible = true;
+				if (alpha >= 1f)
+					_convertirVisible = false;
+				Debug.Log("volviendo visible");
+			}
+			else if(!_convertirVisible)
+			{
+				invisible(self);
+				Debug.Log("volviendo invisible");
+			}
+
 			return true;
 		}
+		#endregion
 		return false;
 	}
 
-	IEnumerator Fade(GameObject self)
+	void invisible(GameObject self)
 	{
-		for (float f = 1f; f >= 0; f -= 0.1f)
-		{
-			
-			Color c = self.GetComponentInChildren<MeshRenderer>().material.color;
-			c.a = f;
-			self.GetComponentInChildren<MeshRenderer>().material.color = c;
-			yield return null;
-		}
+		Color c = self.GetComponentInChildren<MeshRenderer>().material.color;
+		//Se hace este if por problemas con unity
+		c.a -= 0.15f;
+		self.GetComponentInChildren<MeshRenderer>().material.color = c;
 	}
 
+	int visible(GameObject self)
+	{
+		Color c = self.GetComponentInChildren<MeshRenderer>().material.color;
+		c.a += 0.13f;
+		self.GetComponentInChildren<MeshRenderer>().material.color = c;
+		return 1;
+	}
 
 }
