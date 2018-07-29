@@ -490,7 +490,7 @@ MonoBehaviour:
   naveInfo: {fileID: 11400000, guid: 0b6d3c834024e8345a291a2332ec00e0, type: 2}
   golpeSND: {fileID: 82706710572432410}
   vidaTXT: {fileID: 0}
-  _tagDelPlanet: planet
+  _tagDelPlaneta: planet
   _tagDelLaserEnemigo: enemylaser
 --- !u!114 &114064205181897268
 MonoBehaviour:

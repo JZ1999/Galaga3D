@@ -15,7 +15,7 @@ public class ShipHealth : MonoBehaviour {
 	private float _porcentajeRojo;
 
 	[SerializeField]
-	private string _tagDelPlanet;
+	private string _tagDelPlaneta;
 	[SerializeField]
 	private string _tagDelLaserEnemigo;
 	#endregion
@@ -57,7 +57,7 @@ public class ShipHealth : MonoBehaviour {
 
 	bool tocaPlaneta(Collider obj)
 	{
-		return obj.tag == _tagDelPlanet;
+		return obj.tag == _tagDelPlaneta;
 	}
 
     bool tocaLaser(Collider obj)

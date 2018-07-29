@@ -13,8 +13,6 @@ public class EnemyHealth : MonoBehaviour
     private float[] _colores;
 
 	[SerializeField]
-	private string _tagDelPlaneta;
-	[SerializeField]
 	private string _tagDelLaser;
 	#endregion
 
@@ -27,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
 
     void OnTriggerEnter(Collider obj)
     {
-        if (tocaPlaneta(obj) || tocaLaser(obj))
+        if (tocaLaser(obj))
         {
 			tocarSonido();
             bajarVida();
@@ -49,10 +47,6 @@ public class EnemyHealth : MonoBehaviour
 		Destroy(gameObject, 0.2f);
     }
 
-    bool tocaPlaneta(Collider obj)
-    {
-        return obj.tag == _tagDelPlaneta;
-    }
     bool tocaLaser(Collider obj)
     {
         return obj.tag == _tagDelLaser;
