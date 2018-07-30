@@ -120,6 +120,7 @@ Muchos de los estándares vienen del libro [**Clean Code: A Handbook of Agile So
 
 > 27. No usar ningún caracter que no sea de [ASCII](https://www.asciitable.com/). Utilizar doble **n** en vez de **ñ**
 
+
 ## Desarrollo Scrum
 
 Usamos el modelo de [Scrum](https://es.wikipedia.org/wiki/Scrum_(desarrollo_de_software)) con unas alteraciones para desarrollar este juego.
@@ -138,7 +139,7 @@ Aplicaremos el sprint usando esta pagina web [**scrumblr.ca/prototipounity**](ht
 
 Se usa este modelo:
 
-|[Backlog](https://programacionymas.com/blog/scrum-product-backlog)|Pendiente|Comenzando|Testing|Revision|Completo|
+|[Backlog](https://programacionymas.com/blog/scrum-product-backlog)|Pendiente|Comenzando|[Testing](https://unity3d.com/es/learn/tutorials/topics/production/unity-test-tools)|Revision|Completo|
 | ------------- |:-------------:| -----:|
 | | | | | | |
 | | | | | | |
@@ -157,6 +158,18 @@ Usando los valores y principios de [Agile](https://es.wikipedia.org/wiki/Desarro
 
 **Cada sprint es importante tener un producto usable y potencialmente listo para que sea un build**
 
+#### Scrumblr
+
+***
+[Scrumblr](http://www.scrumblr.com/prototipounity) ademas de usar los marcadores rojos para
+enseñar cuales tiquetes son los mas importantes, sino tambien se usará lo siguiente:
+
+
+<p style="color:red"><b>■ Tiquete importante</b></p>
+<p style="color:blue"><b>■ Tiquete de Joseph</b></p>
+<p style="color:yellow"><b>■ Tiquete de Ricardo</b></p>
+<p style="color:green"><b>■ Tiquete de Alejandro</b></p>
+<p style="color:orange"><b>■ Tiquete en espera(Se usa cuando un tiquete no se a podido completar en ese momento)</b></p>
 
 ## Creditos
 
@@ -175,4 +188,14 @@ Usando los valores y principios de [Agile](https://es.wikipedia.org/wiki/Desarro
 #### Alejandro
 [LinkedIn](https://www.linkedin.com/in/joseph-david-zamora-murillo-3645a7148/)
 [Github](https://www.github.com/JZ1999)
+***
+
+
+#### Gustavo
+[LinkedIn](https://www.linkedin.com/in/joseph-david-zamora-murillo-3645a7148/)
+***
+
+
+#### Gilberto
+[LinkedIn](https://www.linkedin.com/in/joseph-david-zamora-murillo-3645a7148/)
 ***
