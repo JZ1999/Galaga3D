@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 [DisallowMultipleComponent]
 public class Actions : MonoBehaviour {
@@ -6,6 +7,7 @@ public class Actions : MonoBehaviour {
 	#region Variables
 	[SerializeField]
 	private GameObject laser;
+	private Scrollbar indicador;
 	[SerializeField]
 	private PlayerInfo naveInfo;
 	private float __cooldownDeDisparo;
@@ -26,6 +28,7 @@ public class Actions : MonoBehaviour {
 	#region Unity Methods
 
 	void Start () {
+		indicador = FindObjectOfType<Scrollbar>();
 		__cooldownDeDisparo = naveInfo.cooldown;
 		__cooldownDeHabilidad = naveInfo.cooldownHabilidad;
 		__duracionHabilidad = naveInfo.duracionHabilidad;
@@ -39,6 +42,7 @@ public class Actions : MonoBehaviour {
 		calcularCooldowns();
 		if (usarHabilidad() && !cooldownActivoHabilidad())
 		{
+			indicadorReseteo();
 			activarHabilidad();
 		}
         if (disparar() && !cooldownActivoDisparar())
@@ -47,6 +51,11 @@ public class Actions : MonoBehaviour {
 		}
     }
 	#endregion
+
+	void indicadorReseteo()
+	{
+		indicador.GetComponent<Scrollbar>().value = 0;
+	}
 
 	void activarHabilidad()
 	{
@@ -76,8 +85,14 @@ public class Actions : MonoBehaviour {
 		if (habilidadTermino())
 		{
 			__cooldownDeHabilidad -= Time.deltaTime;
+			subirIndicador();
 			__laserVault = false;
 		}
+	}
+
+	void subirIndicador()
+	{
+		indicador.GetComponent<Scrollbar>().value = __cooldownDeHabilidad/20f;
 	}
 
 	float calcularCooldownDisparo()

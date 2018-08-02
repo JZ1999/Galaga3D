@@ -38,7 +38,7 @@ public class camara2DMovimiento : MonoBehaviour {
 		{
 			Vector3 posicionDeseada = new Vector3(0, jugadorTR.position.y,-6) + offset;
 			Vector3 posicionDeseadaMejorada = Vector3.Lerp(transform.position, posicionDeseada, _velocidadCamara);
-			transform.position = posicionDeseadaMejorada;
+			transform.position = posicionDeseada;
 		}
 	}
 
